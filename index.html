@@ -1,43 +1,1258 @@
 <!doctype html>
-<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FIREBALL FESTA 2026 | 장바구니 시뮬레이터</title>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>
+      FIREBALL FESTA 2026 | 장바구니 시뮬레이터
+    </title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap');
-:root{--red:#d92832;--dark:#17191d;--sub:#727782;--line:#e8e9ed;--bg:#f7f8fa;--orange:#a96616;--blue:#3767b5}*{box-sizing:border-box}body{margin:0;color:var(--dark);background:var(--bg);font-family:'DM Sans','Noto Sans KR',sans-serif;font-size:14px}button,input,select{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.45}.top{height:73px;display:flex;align-items:center;justify-content:space-between;padding:0 max(28px,calc((100vw - 1480px)/2));background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}.brand{display:flex;align-items:center;gap:14px}.brand-logo{display:block;width:210px;height:auto;max-width:45vw}.logo{font:900 22px 'DM Sans',sans-serif;letter-spacing:-1.5px}.logo span{color:var(--red)}.brand small{border-left:1px solid #ddd;padding-left:15px;color:#767b85;font-size:12px}.top-right{display:flex;gap:16px;align-items:center;color:#68707e;font-size:12px}.cart-trigger{display:none;border:0;border-radius:11px;background:var(--dark);color:#fff;padding:12px 16px;font-weight:700}.shell{max-width:1480px;padding:28px 28px 70px;margin:auto}.hero{display:flex;align-items:stretch;justify-content:space-between;gap:24px;background:#1a1d22;color:#fff;border-radius:20px;padding:36px 38px;position:relative;overflow:hidden}.hero:after{content:'F';font-size:290px;font-weight:900;font-family:Arial,sans-serif;color:#ffffff08;position:absolute;right:17%;top:-114px;pointer-events:none}.eyebrow{color:#ff6067;text-transform:uppercase;letter-spacing:3px;font-size:11px;font-weight:800}.hero h1{font-size:37px;letter-spacing:-1.4px;line-height:1.25;margin:10px 0 12px}.hero p{font-size:13px;color:#c6c9d0;line-height:1.8;margin:0}.hero-note-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:13px}.hero-note-top .hero-note-heading{align-self:flex-end;margin:0 0 3px;white-space:nowrap}.hero-note-top .festa-countdown{margin-top:0;padding:11px 17px;align-items:flex-end;text-align:right}.hero-note-top .countdown-numbers{font-size:17px}.festa-countdown{margin-top:19px;display:inline-flex;flex-direction:column;gap:4px;padding:12px 17px;background:#ffffff0c;border:1px solid #ffffff26;border-radius:11px;position:relative;z-index:1}.countdown-title{font-size:11px;color:#ffc1c4;font-weight:800}.countdown-numbers{font-size:22px;letter-spacing:.1px;font-weight:900;font-variant-numeric:tabular-nums;color:#fff;white-space:nowrap}.countdown-date{font-size:10px;color:#c5c8ce}.hero-note{z-index:1;align-self:center;background:transparent;border:0;padding:0;width:690px;max-width:64%;flex-shrink:0}.hero-note-heading{font-size:12px;font-weight:800;color:#fff;margin:0 0 15px}.hero-gifts{display:grid;grid-template-columns:1.35fr .85fr 1fr 1fr;gap:14px}.hero-gift-card{min-width:0}.hero-gift-card strong{display:block;color:#fff;font-size:24px;font-weight:900;line-height:1.2;white-space:nowrap}.hero-gift-card p{font-size:10px;color:#cfd1d7;line-height:1.55;margin:8px 0 0;overflow-wrap:anywhere}.hero-gift-card:first-child p{white-space:nowrap}.body-grid{display:grid;grid-template-columns:minmax(0,1fr) 365px;gap:25px;margin-top:25px;align-items:start}.catalog{min-width:0}.panel{background:#fff;border:1px solid var(--line);border-radius:18px}.catalog-top{padding:23px 25px}.section-title{display:flex;align-items:baseline;gap:11px}.section-title h2{font-size:21px;margin:0;letter-spacing:-.8px}.section-title span{font-size:12px;color:var(--sub)}.toolbar{display:flex;gap:10px;margin-top:19px}.search{flex:1;min-width:0;border:1px solid #e2e4e9;border-radius:10px;background:#fafbfc;padding:12px 15px;outline:none}.search:focus{border-color:var(--red)}select{padding:11px;border:1px solid var(--line);border-radius:10px;background:white;color:#4e5562;max-width:180px}.filter{display:flex;gap:8px;flex-wrap:wrap;padding-top:16px}.chip{border:1px solid #e5e7ea;background:white;padding:8px 13px;border-radius:20px;font-size:12px;color:#666e79}.chip.active{background:#20232a;border-color:#20232a;color:#fff}.legend{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px 16px;font-size:11px;color:#7d818a}.legend b{font-weight:800}.red{color:var(--red)!important}.blue{color:var(--blue)!important}.orange{color:var(--orange)!important}.product-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:14px}.product{display:flex;flex-direction:column;min-height:193px;padding:20px;background:white;border:1px solid var(--line);border-radius:15px;transition:border-color .15s,transform .15s}.product:hover{border-color:#c9cbd1;transform:translateY(-1px)}.product-head{display:flex;justify-content:space-between;gap:6px}.category{font-size:11px;color:#8b9099}.status{font-size:10px;font-weight:800;white-space:nowrap;border-radius:5px;padding:4px 7px;background:#f4f5f6;color:#767a84}.status.new{background:#fff0f0;color:#ce2631}.status.limited{background:#edf3ff;color:#3768b5}.status.accessory{background:#fff3e2;color:#996018}.name{font-size:15px;font-weight:800;line-height:1.6;min-height:48px;margin:12px 0 14px;word-break:keep-all}.product-bottom{margin-top:auto;display:flex;align-items:end;justify-content:space-between;gap:8px}.regular{font-size:11px;color:#a2a6ad;text-decoration:line-through;min-height:16px}.discount-rate{display:inline-block;margin-right:7px;font-size:16px;font-weight:900;color:var(--red);white-space:nowrap}.cart-discount{margin-top:3px;font-size:11px;font-weight:800;color:var(--red)}.price{font-size:21px;font-weight:900;letter-spacing:-.8px}.won{font-size:13px;margin-left:2px}.add{background:#22252b;color:white;border:0;border-radius:9px;padding:10px 13px;font-weight:700;white-space:nowrap}.add:hover{background:var(--red)}.add.missing{background:#eceef1;color:#7b8089}.results-footer{text-align:center;color:#89909a;font-size:12px;margin:19px}.sidebar{position:static}.cart-panel{padding:24px}.cart-title{display:flex;align-items:center;justify-content:space-between}.cart-title h2{font-size:19px;margin:0}.count{background:#fce9ea;color:var(--red);font-weight:800;border-radius:20px;padding:4px 9px;font-size:11px}.cart-tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:18px}.cart-tabs button{border:1px solid #e0e2e5;border-radius:10px;padding:11px 5px;background:#f7f8fa;color:#747a84;font-size:12px;font-weight:800}.cart-tabs button.active{border-color:#22252b;background:#22252b;color:#fff}.cart-current{margin-top:10px;color:#767d88;font-size:11px}.cart-empty{text-align:center;padding:35px 8px;color:#8c929c}.empty-icon{width:53px;height:53px;background:#f1f2f4;color:#8d929d;display:grid;place-items:center;border-radius:50%;margin:0 auto 14px;font-size:24px}.cart-empty strong{display:block;color:#484e59;margin-bottom:5px}.cart-list{max-height:none;overflow:visible;margin-top:17px}.cart-item{padding:13px 0;border-bottom:1px solid #f0f1f2;display:flex;justify-content:space-between;gap:13px}.cart-item-name{font-size:12px;font-weight:700;line-height:1.6}.cart-item-price{color:#6b707a;font-size:12px;margin-top:5px}.cart-item-right{text-align:right;flex-shrink:0}.qty{display:flex;align-items:center;border:1px solid #e6e8eb;border-radius:7px;overflow:hidden;margin-top:6px}.qty button{border:0;background:#fff;padding:5px 9px}.qty span{min-width:22px;text-align:center;font-size:12px;font-weight:700}.remove{font-size:11px;color:#9ba0aa;background:none;border:0;margin-top:6px;padding:0}.breakdown{margin-top:16px;border-top:1px solid var(--line);padding-top:15px}.line{display:flex;justify-content:space-between;margin:8px 0;color:#747a84;font-size:12px}.line strong{color:#282c32}.savings-line strong{color:var(--red)}.eligible-gift{margin:6px 0 15px;padding:12px 13px;background:#f7f8fa;border-radius:10px;font-size:12px;line-height:1.65}.eligible-gift-label{display:block;font-weight:800;color:#323640;margin-bottom:5px}.eligible-gift-list{color:#555d68}.eligible-gift-empty{color:#848b96}.eligible-gift-list div+div{margin-top:3px}.total{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #e8e9eb;margin-top:14px;padding-top:18px;font-weight:800}.total strong{font-size:26px;letter-spacing:-1px;color:var(--red)}.notice{font-size:11px;line-height:1.8;color:#8a9099;margin-top:16px}.notice strong{color:#616873}.reset{margin-top:16px;width:100%;background:white;border:1px solid #dddfe4;border-radius:10px;padding:11px;color:#646b75}.mini-tip{padding:14px 16px;background:#fff5f5;border:1px solid #ffebed;color:#95535a;font-size:11px;line-height:1.75;border-radius:11px;margin-top:12px}.bottom-nav{display:none}.close-cart{display:none}.backdrop{display:none}.no-result{grid-column:1/-1;text-align:center;padding:65px;color:#89909b}.stock-note{color:#a6aab1;font-size:10px;margin-top:5px}
-@media(max-width:1100px){.hero-note{max-width:63%}.hero-gifts{gap:10px}.hero-gift-card strong{font-size:21px}.hero-gift-card p{font-size:10px}.hero-gift-card:first-child p{white-space:normal}.body-grid{grid-template-columns:minmax(0,1fr) 315px}.shell{padding:20px}.product-list{grid-template-columns:1fr}.hero{padding:29px}.hero h1{font-size:30px}}@media(max-width:760px){.top{height:61px;padding:0 18px}.brand-logo{width:170px;max-width:54vw}.brand small{display:none}.top-right>span{display:none}.cart-trigger{display:block}.shell{padding:14px 14px 98px}.hero{padding:26px 23px;border-radius:15px}.hero h1{font-size:27px}.hero{flex-direction:column;gap:16px}.hero-note{display:block;align-self:stretch;width:100%;max-width:100%;padding:0}.hero-note-top{align-items:flex-start;gap:8px}.hero-note-top .festa-countdown{padding:10px 13px}.hero-note-top .countdown-numbers{font-size:13px}.hero-note-top .countdown-date{font-size:9px}.hero-gifts{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 14px}.hero-gift-card p{font-size:11px}.hero-gift-card:first-child p{white-space:normal}.body-grid{display:block;margin-top:14px}.catalog-top{padding:19px 16px}.toolbar{flex-wrap:wrap}.toolbar select{flex:0 0 115px}.filter{gap:6px}.chip{font-size:11px;padding:7px 10px}.product-list{grid-template-columns:1fr;gap:9px;margin-top:10px}.product{min-height:165px;padding:16px}.sidebar{display:none;position:fixed;z-index:30;inset:0 0 0 auto;width:min(94vw,430px);background:var(--bg);overflow:auto;padding:14px;box-shadow:-10px 0 40px #0002}.sidebar.open{display:block}.close-cart{display:block;background:transparent;border:none;font-size:23px}.backdrop.open{display:block;position:fixed;inset:0;background:#0008;z-index:29}.bottom-nav{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:12;background:#fff;align-items:center;justify-content:space-between;padding:13px 17px max(13px,env(safe-area-inset-bottom));box-shadow:0 -5px 24px #0001}.bottom-nav div{font-size:12px;color:#737984}.bottom-nav strong{display:block;color:var(--red);font-size:20px}.bottom-nav button{background:#22252b;color:white;border:0;border-radius:9px;padding:12px 18px;font-weight:800}}
-</style></head>
-<body><header class="top"><div class="brand"><img class="brand-logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnMAAAByAgMAAABFHb8RAAAADFBMVEX///8AAACUHi4AAADhRqf2AAADvUlEQVR42u1aO27bQBQcbijAUMUi6l0aziX2CCkkx6VOkXrrnMJNgMBx4SPwEjFcqncKVYIAEWSK5WeXWkrviVpiEew0Ji0KGr7PvA8JRERERERERERERERE/M9I7NNnAG8qGHbiiBzuESa7uf7zKxh2n8yTn7W3v+QB2m7eHNyF6NkndzCGwU44eIbDzvDnTXjs1JDOhMDOYhSIIKdub94CAGZf238cXoFkCXzk1r/xu38hUL0Aq+70w5CnhcThtalSS+uzZInus2OLaUK7R17greS5KxbLAXOwPKsA4G1dPvAC7/P5Ut7dgDwq7Jw6WyoAa1bgEX4tG58VAgDeAWDX+ZkCSY/thHa9g91NYzptPLriZVMoym1jOmDvq4dMuXfjUrnSlx6zzZwazMq5rq875VOM0wtt13p046laSGKSH7ETNSkvgXcVO6um/SzPS4qjgvVQlyXjktpqMmezsxXECLyj2mcxyGWP77Ui7ijuSusDfy1edqGiwEwLL7QqnglFJ8ZT5EIxZto2klb4EZScJSnCtzttbMcpt16ilN5WNluWpAjfs0RmGSK/zHbjqa2amaLGbDWUFtmIrHhmV85zqAxB4UnK0ZVzPK0BpZp6MevbxLDUpHuUWviuXiWK1s4FU1IEVQKnk5FTVDxkbt4KyraWlHG1wkPTaUZ4FhK7zLRiMcqzHqIq7RssDcl2iSl81agJSamSlx75yc49WZo7lBV5uzHAboM9K3Or05179eoaPah9gOiERNWtHa+TeiFIsWQOisO20xsynJt6fmMhSaOO84eyUVkhqLkq/eaTMCssCwfefJVdMjsOWqkkJetsGtttrAmW1KbwXCudCuhPjQvm6MzuWoeeRJGm24oUQSlTgJ2Jvr+gjcolkLTC2nbLdR9tzxWpM0cWK0u32q80rbi1g/phWHFDDDyGa2txPLW4GvBsyZcUHXgpW1AK+rfMrLgxDwjOragBldsVmR6Gwgg1wdXlnJ5+0tE3MMvfd11jhSLuKrYA5VFUbavCzCZalyLMHc8dQ4vbwEtoETCuzu67kycQl3kVTVkL7aKtafKMx65seOlXKzb0wMtIAXCFeXauGoo0Pf5L0pRc30HOl5Te89l7pbc8xAWe1hRJaLX60Zcwc1b78v7ZUdhOFzNahbgoS7p7EObrT4G8Rybc7WYY5MysWHMa48nZ7Z2HobArnWYMhV3HKRTHWux2zcF7KOwsVayfvJePobCz3qw8/JEA8A0hehZ4A4AHREREREREREREREREREyCf1SI0Z7glU3tAAAAAElFTkSuQmCC" alt="FIREBALL 로고"><small>2026 FESTA · 장바구니</small></div><div class="top-right"><button class="cart-trigger" onclick="toggleCart(true)">장바구니 <span id="topCount">0</span></button></div></header>
-<main class="shell"><section class="hero"><div><div class="eyebrow">FIREBALL 2026 FESTA</div><h1>담을수록 더 커지는 혜택.<br>나만의 페스타 장바구니</h1><p>원하는 상품을 담아보세요. 최종 공구가 합계와<br>구매 금액대별 사은품을 실시간으로 확인할 수 있습니다.</p></div><div class="hero-note"><div class="hero-note-top"><div class="hero-note-heading">금액별 사은품</div><div class="festa-countdown" role="timer" aria-label="페스타 시작까지 남은 시간"><span class="countdown-title">페스타 시작까지</span><div class="countdown-numbers" id="festaCountdown">--일 --시간 --분 --초</div><span class="countdown-date">2026. 11. 06. 오후 6:00 (KST)</span></div></div><div class="hero-gifts" id="heroGifts"></div></div></section>
-<div class="body-grid"><section class="catalog"><div class="panel catalog-top"><div class="section-title"><h2>페스타 상품</h2><span id="productCount"></span></div><div class="toolbar"><input class="search" id="search" type="search" placeholder="상품명으로 검색해보세요" aria-label="상품명 검색"><select id="sort" aria-label="상품 정렬"><option value="default">기본 순서</option><option value="low">낮은 공구가순</option><option value="high">높은 공구가순</option><option value="discount">할인율 높은순</option></select></div><div class="filter" id="filters"></div></div><div class="product-list" id="productList"></div><div class="results-footer" id="resultsFooter"></div></section>
-<aside class="sidebar" id="sidebar"><div class="panel cart-panel"><div class="cart-title"><h2>내 장바구니 <span class="count" id="cartCount">0</span></h2><button class="close-cart" aria-label="장바구니 닫기" onclick="toggleCart(false)">×</button></div><div class="cart-tabs" role="group" aria-label="장바구니 선택"><button type="button" id="cartTab1" onclick="selectCart(1)">1번 장바구니</button><button type="button" id="cartTab2" onclick="selectCart(2)">2번 장바구니</button></div><div class="cart-current" id="cartCurrent">1번 장바구니에 담는 중</div><div id="cartBody"></div><div class="breakdown"><div class="line"><span>정상가 합계</span><strong id="subtotal">0원</strong></div><div class="line savings-line"><span>총 할인 금액</span><strong id="savings">0원</strong></div><div class="line"><span>사은품 인정 금액</span><strong id="eligible">0원</strong></div><div class="eligible-gift" id="eligibleGift" aria-live="polite"></div><div class="total"><span>최종 결제 예상 금액</span><strong id="grandTotal">0원</strong></div></div><button class="reset" onclick="clearCart()">장바구니 전체 비우기</button><div class="mini-tip">안내 : 액세서리 지급 불가하며, 사은품은 금액에 맞춰 1개만 표시됩니다.<br>배송비는 별도입니다.<br>홈페이지에 오류가 있을 수 있으며, 실제 행사 내용과는 다를 수 있습니다.</div></div></aside></div></main>
-<div class="backdrop" id="backdrop" onclick="toggleCart(false)"></div><div class="bottom-nav"><div><span id="mobileCartLabel">1번 장바구니 예상 합계</span><strong id="mobileTotal">0원</strong></div><button onclick="toggleCart(true)">장바구니 보기 (<span id="mobileCount">0</span>)</button></div>
+ :root {
+  --red:#d92832;
+  --dark:#17191d;
+  --sub:#727782;
+  --line:#e8e9ed;
+  --bg:#f7f8fa;
+  --orange:#a96616;
+  --blue:#3767b5
+}
+* {
+  box-sizing:border-box
+}
+body {
+  margin:0;
+  color:var(--dark);
+  background:var(--bg);
+  font-family:'DM Sans','Noto Sans KR',sans-serif;
+  font-size:14px
+}
+button,input,select {
+  font:inherit
+}
+button {
+  cursor:pointer
+}
+button:disabled {
+  cursor:not-allowed;
+  opacity:.45
+}
+.top {
+  height:73px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 max(28px,calc((100vw - 1480px)/2));
+  background:#fff;
+  border-bottom:1px solid var(--line);
+  position:sticky;
+  top:0;
+  z-index:10
+}
+.brand {
+  display:flex;
+  align-items:center;
+  gap:14px
+}
+.brand-logo {
+  display:block;
+  width:210px;
+  height:auto;
+  max-width:45vw
+}
+.logo {
+  font:900 22px 'DM Sans',sans-serif;
+  letter-spacing:-1.5px
+}
+.logo span {
+  color:var(--red)
+}
+.brand small {
+  border-left:1px solid #ddd;
+  padding-left:15px;
+  color:#767b85;
+  font-size:12px
+}
+.top-right {
+  display:flex;
+  gap:16px;
+  align-items:center;
+  color:#68707e;
+  font-size:12px
+}
+.cart-trigger {
+  display:none;
+  border:0;
+  border-radius:11px;
+  background:var(--dark);
+  color:#fff;
+  padding:12px 16px;
+  font-weight:700
+}
+.shell {
+  max-width:1480px;
+  padding:28px 28px 70px;
+  margin:auto
+}
+.hero {
+  display:flex;
+  align-items:stretch;
+  justify-content:space-between;
+  gap:24px;
+  background:#1a1d22;
+  color:#fff;
+  border-radius:20px;
+  padding:36px 38px;
+  position:relative;
+  overflow:hidden
+}
+.hero:after {
+  content:'F';
+  font-size:290px;
+  font-weight:900;
+  font-family:Arial,sans-serif;
+  color:#ffffff08;
+  position:absolute;
+  right:17%;
+  top:-114px;
+  pointer-events:none
+}
+.eyebrow {
+  color:#ff6067;
+  text-transform:uppercase;
+  letter-spacing:3px;
+  font-size:11px;
+  font-weight:800
+}
+.hero h1 {
+  font-size:37px;
+  letter-spacing:-1.4px;
+  line-height:1.25;
+  margin:10px 0 12px
+}
+.hero p {
+  font-size:13px;
+  color:#c6c9d0;
+  line-height:1.8;
+  margin:0
+}
+.hero-note-top {
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:13px
+}
+.hero-note-top .hero-note-heading {
+  align-self:flex-end;
+  margin:0 0 3px;
+  white-space:nowrap
+}
+.hero-note-top .festa-countdown {
+  margin-top:0;
+  padding:11px 17px;
+  align-items:flex-end;
+  text-align:right
+}
+.hero-note-top .countdown-numbers {
+  font-size:17px
+}
+.festa-countdown {
+  margin-top:19px;
+  display:inline-flex;
+  flex-direction:column;
+  gap:4px;
+  padding:12px 17px;
+  background:#ffffff0c;
+  border:1px solid #ffffff26;
+  border-radius:11px;
+  position:relative;
+  z-index:1
+}
+.countdown-title {
+  font-size:11px;
+  color:#ffc1c4;
+  font-weight:800
+}
+.countdown-numbers {
+  font-size:22px;
+  letter-spacing:.1px;
+  font-weight:900;
+  font-variant-numeric:tabular-nums;
+  color:#fff;
+  white-space:nowrap
+}
+.countdown-date {
+  font-size:10px;
+  color:#c5c8ce
+}
+.hero-note {
+  z-index:1;
+  align-self:center;
+  background:transparent;
+  border:0;
+  padding:0;
+  width:690px;
+  max-width:64%;
+  flex-shrink:0
+}
+.hero-note-heading {
+  font-size:12px;
+  font-weight:800;
+  color:#fff;
+  margin:0 0 15px
+}
+.hero-gifts {
+  display:grid;
+  grid-template-columns:1.35fr .85fr 1fr 1fr;
+  gap:14px
+}
+.hero-gift-card {
+  min-width:0
+}
+.hero-gift-card strong {
+  display:block;
+  color:#fff;
+  font-size:24px;
+  font-weight:900;
+  line-height:1.2;
+  white-space:nowrap
+}
+.hero-gift-card p {
+  font-size:10px;
+  color:#cfd1d7;
+  line-height:1.55;
+  margin:8px 0 0;
+  overflow-wrap:anywhere
+}
+.hero-gift-card:first-child p {
+  white-space:nowrap
+}
+.body-grid {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 365px;
+  gap:25px;
+  margin-top:25px;
+  align-items:start
+}
+.catalog {
+  min-width:0
+}
+.panel {
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:18px
+}
+.catalog-top {
+  padding:23px 25px
+}
+.section-title {
+  display:flex;
+  align-items:baseline;
+  gap:11px
+}
+.section-title h2 {
+  font-size:21px;
+  margin:0;
+  letter-spacing:-.8px
+}
+.section-title span {
+  font-size:12px;
+  color:var(--sub)
+}
+.toolbar {
+  display:flex;
+  gap:10px;
+  margin-top:19px
+}
+.search {
+  flex:1;
+  min-width:0;
+  border:1px solid #e2e4e9;
+  border-radius:10px;
+  background:#fafbfc;
+  padding:12px 15px;
+  outline:none
+}
+.search:focus {
+  border-color:var(--red)
+}
+select {
+  padding:11px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  background:white;
+  color:#4e5562;
+  max-width:180px
+}
+.filter {
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  padding-top:16px
+}
+.chip {
+  border:1px solid #e5e7ea;
+  background:white;
+  padding:8px 13px;
+  border-radius:20px;
+  font-size:12px;
+  color:#666e79
+}
+.chip.active {
+  background:#20232a;
+  border-color:#20232a;
+  color:#fff
+}
+.legend {
+  margin-top:14px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px 16px;
+  font-size:11px;
+  color:#7d818a
+}
+.legend b {
+  font-weight:800
+}
+.red {
+  color:var(--red)!important
+}
+.blue {
+  color:var(--blue)!important
+}
+.orange {
+  color:var(--orange)!important
+}
+.product-list {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+  margin-top:14px
+}
+.product {
+  display:flex;
+  flex-direction:column;
+  min-height:193px;
+  padding:20px;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:15px;
+  transition:border-color .15s,transform .15s
+}
+.product:hover {
+  border-color:#c9cbd1;
+  transform:translateY(-1px)
+}
+.product-head {
+  display:flex;
+  justify-content:space-between;
+  gap:6px
+}
+.category {
+  font-size:11px;
+  color:#8b9099
+}
+.status {
+  font-size:10px;
+  font-weight:800;
+  white-space:nowrap;
+  border-radius:5px;
+  padding:4px 7px;
+  background:#f4f5f6;
+  color:#767a84
+}
+.status.new {
+  background:#fff0f0;
+  color:#ce2631
+}
+.status.limited {
+  background:#edf3ff;
+  color:#3768b5
+}
+.status.accessory {
+  background:#fff3e2;
+  color:#996018
+}
+.name {
+  font-size:15px;
+  font-weight:800;
+  line-height:1.6;
+  min-height:48px;
+  margin:12px 0 14px;
+  word-break:keep-all
+}
+.product-bottom {
+  margin-top:auto;
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:8px
+}
+.regular {
+  font-size:11px;
+  color:#a2a6ad;
+  text-decoration:line-through;
+  min-height:16px
+}
+.discount-rate {
+  display:inline-block;
+  margin-right:7px;
+  font-size:16px;
+  font-weight:900;
+  color:var(--red);
+  white-space:nowrap
+}
+.cart-discount {
+  margin-top:3px;
+  font-size:11px;
+  font-weight:800;
+  color:var(--red)
+}
+.price {
+  font-size:21px;
+  font-weight:900;
+  letter-spacing:-.8px
+}
+.won {
+  font-size:13px;
+  margin-left:2px
+}
+.add {
+  background:#22252b;
+  color:white;
+  border:0;
+  border-radius:9px;
+  padding:10px 13px;
+  font-weight:700;
+  white-space:nowrap
+}
+.add:hover {
+  background:var(--red)
+}
+.add.missing {
+  background:#eceef1;
+  color:#7b8089
+}
+.results-footer {
+  text-align:center;
+  color:#89909a;
+  font-size:12px;
+  margin:19px
+}
+.sidebar {
+  position:static
+}
+.cart-panel {
+  padding:24px
+}
+.cart-title {
+  display:flex;
+  align-items:center;
+  justify-content:space-between
+}
+.cart-title h2 {
+  font-size:19px;
+  margin:0
+}
+.count {
+  background:#fce9ea;
+  color:var(--red);
+  font-weight:800;
+  border-radius:20px;
+  padding:4px 9px;
+  font-size:11px
+}
+.cart-tabs {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  margin-top:18px
+}
+.cart-tabs button {
+  border:1px solid #e0e2e5;
+  border-radius:10px;
+  padding:11px 5px;
+  background:#f7f8fa;
+  color:#747a84;
+  font-size:12px;
+  font-weight:800
+}
+.cart-tabs button.active {
+  border-color:#22252b;
+  background:#22252b;
+  color:#fff
+}
+.cart-current {
+  margin-top:10px;
+  color:#767d88;
+  font-size:11px
+}
+.cart-empty {
+  text-align:center;
+  padding:35px 8px;
+  color:#8c929c
+}
+.empty-icon {
+  width:53px;
+  height:53px;
+  background:#f1f2f4;
+  color:#8d929d;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  margin:0 auto 14px;
+  font-size:24px
+}
+.cart-empty strong {
+  display:block;
+  color:#484e59;
+  margin-bottom:5px
+}
+.cart-list {
+  max-height:none;
+  overflow:visible;
+  margin-top:17px
+}
+.cart-item {
+  padding:13px 0;
+  border-bottom:1px solid #f0f1f2;
+  display:flex;
+  justify-content:space-between;
+  gap:13px
+}
+.cart-item-name {
+  font-size:12px;
+  font-weight:700;
+  line-height:1.6
+}
+.cart-item-price {
+  color:#6b707a;
+  font-size:12px;
+  margin-top:5px
+}
+.cart-item-right {
+  text-align:right;
+  flex-shrink:0
+}
+.qty {
+  display:flex;
+  align-items:center;
+  border:1px solid #e6e8eb;
+  border-radius:7px;
+  overflow:hidden;
+  margin-top:6px
+}
+.qty button {
+  border:0;
+  background:#fff;
+  padding:5px 9px
+}
+.qty span {
+  min-width:22px;
+  text-align:center;
+  font-size:12px;
+  font-weight:700
+}
+.remove {
+  font-size:11px;
+  color:#9ba0aa;
+  background:none;
+  border:0;
+  margin-top:6px;
+  padding:0
+}
+.breakdown {
+  margin-top:16px;
+  border-top:1px solid var(--line);
+  padding-top:15px
+}
+.line {
+  display:flex;
+  justify-content:space-between;
+  margin:8px 0;
+  color:#747a84;
+  font-size:12px
+}
+.line strong {
+  color:#282c32
+}
+.savings-line strong {
+  color:var(--red)
+}
+.eligible-gift {
+  margin:6px 0 15px;
+  padding:12px 13px;
+  background:#f7f8fa;
+  border-radius:10px;
+  font-size:12px;
+  line-height:1.65
+}
+.eligible-gift-label {
+  display:block;
+  font-weight:800;
+  color:#323640;
+  margin-bottom:5px
+}
+.eligible-gift-list {
+  color:#555d68
+}
+.eligible-gift-empty {
+  color:#848b96
+}
+.eligible-gift-list div+div {
+  margin-top:3px
+}
+.total {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-top:1px solid #e8e9eb;
+  margin-top:14px;
+  padding-top:18px;
+  font-weight:800
+}
+.total strong {
+  font-size:26px;
+  letter-spacing:-1px;
+  color:var(--red)
+}
+.notice {
+  font-size:11px;
+  line-height:1.8;
+  color:#8a9099;
+  margin-top:16px
+}
+.notice strong {
+  color:#616873
+}
+.reset {
+  margin-top:16px;
+  width:100%;
+  background:white;
+  border:1px solid #dddfe4;
+  border-radius:10px;
+  padding:11px;
+  color:#646b75
+}
+.mini-tip {
+  padding:14px 16px;
+  background:#fff5f5;
+  border:1px solid #ffebed;
+  color:#95535a;
+  font-size:11px;
+  line-height:1.75;
+  border-radius:11px;
+  margin-top:12px
+}
+.bottom-nav {
+  display:none
+}
+.close-cart {
+  display:none
+}
+.backdrop {
+  display:none
+}
+.no-result {
+  grid-column:1/-1;
+  text-align:center;
+  padding:65px;
+  color:#89909b
+}
+.stock-note {
+  color:#a6aab1;
+  font-size:10px;
+  margin-top:5px
+}
+ @media(max-width:1100px) {
+  .hero-note {
+    max-width:63%
+  }
+  .hero-gifts {
+    gap:10px
+  }
+  .hero-gift-card strong {
+    font-size:21px
+  }
+  .hero-gift-card p {
+    font-size:10px
+  }
+  .hero-gift-card:first-child p {
+    white-space:normal
+  }
+  .body-grid {
+    grid-template-columns:minmax(0,1fr) 315px
+  }
+  .shell {
+    padding:20px
+  }
+  .product-list {
+    grid-template-columns:1fr
+  }
+  .hero {
+    padding:29px
+  }
+  .hero h1 {
+    font-size:30px
+  }
+}
+@media(max-width:760px) {
+  .top {
+    height:61px;
+    padding:0 18px
+  }
+  .brand-logo {
+    width:170px;
+    max-width:54vw
+  }
+  .brand small {
+    display:none
+  }
+  .top-right>span {
+    display:none
+  }
+  .cart-trigger {
+    display:block
+  }
+  .shell {
+    padding:14px 14px 98px
+  }
+  .hero {
+    padding:26px 23px;
+    border-radius:15px
+  }
+  .hero h1 {
+    font-size:27px
+  }
+  .hero {
+    flex-direction:column;
+    gap:16px
+  }
+  .hero-note {
+    display:block;
+    align-self:stretch;
+    width:100%;
+    max-width:100%;
+    padding:0
+  }
+  .hero-note-top {
+    align-items:flex-start;
+    gap:8px
+  }
+  .hero-note-top .festa-countdown {
+    padding:10px 13px
+  }
+  .hero-note-top .countdown-numbers {
+    font-size:13px
+  }
+  .hero-note-top .countdown-date {
+    font-size:9px
+  }
+  .hero-gifts {
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:20px 14px
+  }
+  .hero-gift-card p {
+    font-size:11px
+  }
+  .hero-gift-card:first-child p {
+    white-space:normal
+  }
+  .body-grid {
+    display:block;
+    margin-top:14px
+  }
+  .catalog-top {
+    padding:19px 16px
+  }
+  .toolbar {
+    flex-wrap:wrap
+  }
+  .toolbar select {
+    flex:0 0 115px
+  }
+  .filter {
+    gap:6px
+  }
+  .chip {
+    font-size:11px;
+    padding:7px 10px
+  }
+  .product-list {
+    grid-template-columns:1fr;
+    gap:9px;
+    margin-top:10px
+  }
+  .product {
+    min-height:165px;
+    padding:16px
+  }
+  .sidebar {
+    display:none;
+    position:fixed;
+    z-index:30;
+    inset:0 0 0 auto;
+    width:min(94vw,430px);
+    background:var(--bg);
+    overflow:auto;
+    padding:14px;
+    box-shadow:-10px 0 40px #0002
+  }
+  .sidebar.open {
+    display:block
+  }
+  .close-cart {
+    display:block;
+    background:transparent;
+    border:none;
+    font-size:23px
+  }
+  .backdrop.open {
+    display:block;
+    position:fixed;
+    inset:0;
+    background:#0008;
+    z-index:29
+  }
+  .bottom-nav {
+    display:flex;
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    z-index:12;
+    background:#fff;
+    align-items:center;
+    justify-content:space-between;
+    padding:13px 17px max(13px,env(safe-area-inset-bottom));
+    box-shadow:0 -5px 24px #0001
+  }
+  .bottom-nav div {
+    font-size:12px;
+    color:#737984
+  }
+  .bottom-nav strong {
+    display:block;
+    color:var(--red);
+    font-size:20px
+  }
+  .bottom-nav button {
+    background:#22252b;
+    color:white;
+    border:0;
+    border-radius:9px;
+    padding:12px 18px;
+    font-weight:800
+  }
+}
+</style>
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <img class="brand-logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnMAAAByAgMAAABFHb8RAAAADFBMVEX///8AAACUHi4AAADhRqf2AAADvUlEQVR42u1aO27bQBQcbijAUMUi6l0aziX2CCkkx6VOkXrrnMJNgMBx4SPwEjFcqncKVYIAEWSK5WeXWkrviVpiEew0Ji0KGr7PvA8JRERERERERERERERE/M9I7NNnAG8qGHbiiBzuESa7uf7zKxh2n8yTn7W3v+QB2m7eHNyF6NkndzCGwU44eIbDzvDnTXjs1JDOhMDOYhSIIKdub94CAGZf238cXoFkCXzk1r/xu38hUL0Aq+70w5CnhcThtalSS+uzZInus2OLaUK7R17greS5KxbLAXOwPKsA4G1dPvAC7/P5Ut7dgDwq7Jw6WyoAa1bgEX4tG58VAgDeAWDX+ZkCSY/thHa9g91NYzptPLriZVMoym1jOmDvq4dMuXfjUrnSlx6zzZwazMq5rq875VOM0wtt13p046laSGKSH7ETNSkvgXcVO6um/SzPS4qjgvVQlyXjktpqMmezsxXECLyj2mcxyGWP77Ui7ijuSusDfy1edqGiwEwLL7QqnglFJ8ZT5EIxZto2klb4EZScJSnCtzttbMcpt16ilN5WNluWpAjfs0RmGSK/zHbjqa2amaLGbDWUFtmIrHhmV85zqAxB4UnK0ZVzPK0BpZp6MevbxLDUpHuUWviuXiWK1s4FU1IEVQKnk5FTVDxkbt4KyraWlHG1wkPTaUZ4FhK7zLRiMcqzHqIq7RssDcl2iSl81agJSamSlx75yc49WZo7lBV5uzHAboM9K3Or05179eoaPah9gOiERNWtHa+TeiFIsWQOisO20xsynJt6fmMhSaOO84eyUVkhqLkq/eaTMCssCwfefJVdMjsOWqkkJetsGtttrAmW1KbwXCudCuhPjQvm6MzuWoeeRJGm24oUQSlTgJ2Jvr+gjcolkLTC2nbLdR9tzxWpM0cWK0u32q80rbi1g/phWHFDDDyGa2txPLW4GvBsyZcUHXgpW1AK+rfMrLgxDwjOragBldsVmR6Gwgg1wdXlnJ5+0tE3MMvfd11jhSLuKrYA5VFUbavCzCZalyLMHc8dQ4vbwEtoETCuzu67kycQl3kVTVkL7aKtafKMx65seOlXKzb0wMtIAXCFeXauGoo0Pf5L0pRc30HOl5Te89l7pbc8xAWe1hRJaLX60Zcwc1b78v7ZUdhOFzNahbgoS7p7EObrT4G8Rybc7WYY5MysWHMa48nZ7Z2HobArnWYMhV3HKRTHWux2zcF7KOwsVayfvJePobCz3qw8/JEA8A0hehZ4A4AHREREREREREREREREREyCf1SI0Z7glU3tAAAAAElFTkSuQmCC" alt="FIREBALL 로고">
+      <small>
+        2026 FESTA · 장바구니
+      </small>
+    </div>
+    <div class="top-right">
+      <button class="cart-trigger" onclick="toggleCart(true)">
+        장바구니
+        <span id="topCount">
+          0
+        </span>
+      </button>
+    </div>
+  </header>
+  <main class="shell">
+    <section class="hero">
+      <div>
+        <div class="eyebrow">
+          FIREBALL 2026 FESTA
+        </div>
+        <h1>
+          담을수록 더 커지는 혜택.
+          <br>
+          나만의 페스타 장바구니
+        </h1>
+        <p>
+          원하는 상품을 담아보세요. 최종 공구가 합계와
+          <br>
+          구매 금액대별 사은품을 실시간으로 확인할 수 있습니다.
+        </p>
+      </div>
+      <div class="hero-note">
+        <div class="hero-note-top">
+          <div class="hero-note-heading">
+            금액별 사은품
+          </div>
+          <div class="festa-countdown" role="timer" aria-label="페스타 시작까지 남은 시간">
+            <span class="countdown-title">
+              페스타 시작까지
+            </span>
+            <div class="countdown-numbers" id="festaCountdown">
+              --일 --시간 --분 --초
+            </div>
+            <span class="countdown-date">
+              2026. 11. 06. 오후 6:00 (KST)
+            </span>
+          </div>
+        </div>
+        <div class="hero-gifts" id="heroGifts">
+        </div>
+      </div>
+    </section>
+    <div class="body-grid">
+      <section class="catalog">
+        <div class="panel catalog-top">
+          <div class="section-title">
+            <h2>
+              페스타 상품
+            </h2>
+            <span id="productCount">
+            </span>
+          </div>
+          <div class="toolbar">
+            <input class="search" id="search" type="search" placeholder="상품명으로 검색해보세요" aria-label="상품명 검색">
+            <select id="sort" aria-label="상품 정렬">
+              <option value="default">
+                기본 순서
+              </option>
+              <option value="low">
+                낮은 공구가순
+              </option>
+              <option value="high">
+                높은 공구가순
+              </option>
+              <option value="discount">
+                할인율 높은순
+              </option>
+            </select>
+          </div>
+          <div class="filter" id="filters">
+          </div>
+        </div>
+        <div class="product-list" id="productList">
+        </div>
+        <div class="results-footer" id="resultsFooter">
+        </div>
+      </section>
+      <aside class="sidebar" id="sidebar">
+        <div class="panel cart-panel">
+          <div class="cart-title">
+            <h2>
+              내 장바구니
+              <span class="count" id="cartCount">
+                0
+              </span>
+            </h2>
+            <button class="close-cart" aria-label="장바구니 닫기" onclick="toggleCart(false)">
+              ×
+            </button>
+          </div>
+          <div class="cart-tabs" role="group" aria-label="장바구니 선택">
+            <button type="button" id="cartTab1" onclick="selectCart(1)">
+              1번 장바구니
+            </button>
+            <button type="button" id="cartTab2" onclick="selectCart(2)">
+              2번 장바구니
+            </button>
+          </div>
+          <div class="cart-current" id="cartCurrent">
+            1번 장바구니에 담는 중
+          </div>
+          <div id="cartBody">
+          </div>
+          <div class="breakdown">
+            <div class="line">
+              <span>
+                정상가 합계
+              </span>
+              <strong id="subtotal">
+                0원
+              </strong>
+            </div>
+            <div class="line savings-line">
+              <span>
+                총 할인 금액
+              </span>
+              <strong id="savings">
+                0원
+              </strong>
+            </div>
+            <div class="line">
+              <span>
+                사은품 인정 금액
+              </span>
+              <strong id="eligible">
+                0원
+              </strong>
+            </div>
+            <div class="eligible-gift" id="eligibleGift" aria-live="polite">
+            </div>
+            <div class="total">
+              <span>
+                최종 결제 예상 금액
+              </span>
+              <strong id="grandTotal">
+                0원
+              </strong>
+            </div>
+          </div>
+          <button class="reset" onclick="clearCart()">
+            장바구니 전체 비우기
+          </button>
+          <div class="mini-tip">
+            안내 : 액세서리 지급 불가하며, 사은품은 금액에 맞춰 1개만 표시됩니다.
+            <br>
+            배송비는 별도입니다.
+            <br>
+            홈페이지에 오류가 있을 수 있으며, 실제 행사 내용과는 다를 수 있습니다.
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+  <div class="backdrop" id="backdrop" onclick="toggleCart(false)">
+  </div>
+  <div class="bottom-nav">
+    <div>
+      <span id="mobileCartLabel">
+        1번 장바구니 예상 합계
+      </span>
+      <strong id="mobileTotal">
+        0원
+      </strong>
+    </div>
+    <button onclick="toggleCart(true)">
+      장바구니 보기 (
+      <span id="mobileCount">
+        0
+      </span>
+      )
+    </button>
+  </div>
 <script>
 const FESTA_START=new Date('2026-11-06T18:00:00+09:00').getTime();
+
 function updateFestaCountdown(){const el=document.getElementById('festaCountdown');if(!el)return;const remaining=Math.max(0,FESTA_START-Date.now());if(remaining===0){el.textContent='페스타 시작!';return;}const secs=Math.floor(remaining/1000),days=Math.floor(secs/86400),hours=Math.floor(secs%86400/3600),mins=Math.floor(secs%3600/60),seconds=secs%60;el.textContent=`${days}일 ${String(hours).padStart(2,'0')}시간 ${String(mins).padStart(2,'0')}분 ${String(seconds).padStart(2,'0')}초`;}
 updateFestaCountdown();setInterval(updateFestaCountdown,1000);
-const PRODUCTS=[{"id":3,"name":"pH3 산성 카샴푸 4L","category":"파이어볼 케미컬","group":"파이어볼 4L 최대 50%","status":"normal","price":35000,"regular":70000,"stock":"400"},{"id":4,"name":"그레이스 4L","category":"파이어볼 케미컬","group":"파이어볼 4L 최대 50%","status":"normal","price":44000,"regular":88000,"stock":"40"},{"id":5,"name":"글라스 4L","category":"파이어볼 케미컬","group":"파이어볼 4L 최대 50%","status":"normal","price":25000,"regular":45000,"stock":"40"},{"id":6,"name":"글로스 4L","category":"파이어볼 케미컬","group":"파이어볼 4L 최대 50%","status":"normal","price":65000,"regular":100000,"stock":"28"},{"id":7,"name":"나파코트 4L","category":"파이어볼 케미컬","group":"파이어볼 4L 최대 50%","status":"normal","price":39000,"regular":60000,"stock":"40"},{"id":8,"name":"나파클리너 4L","category":"파이어볼 케미컬","group":"파이어볼 4L 최대 50%","status":"normal","price":36000,"regular":60000,"stock":"40"},{"id":9,"name":"리본 4L","category":"파이어볼 케미컬","group":"파이어볼 4L 최대 50%","status":"normal","price":36000,"regular":60000,"stock":"80"},{"id":10,"name":"버그 클리너 4L","category":"파이어볼 케미컬","group":"파이어볼 4L 최대 50%","status":"normal","price":25000,"regular":50000,"stock":"80"},{"id":11,"name":"사틴 4L","category":"파이어볼 케미컬","group":"파이어볼 4L 최대 50%","status":"normal","price":60000,"regular":100000,"stock":"20"},{"id":12,"name":"쇼카 듀크 4L","category":"파이어볼 케미컬","group":"파이어볼 4L 최대 50%","status":"normal","price":null,"regular":null,"stock":"X"},{"id":13,"name":"쇼카 샴푸 4L","category":"파이어볼 케미컬","group":"파이어볼 4L 최대 50%","status":"normal","price":40000,"regular":80000,"stock":"200"},{"id":14,"name":"쇼카 타이어 4L","category":"파이어볼 케미컬","group":"파이어볼 4L 최대 50%","status":"normal","price":72000,"regular":120000,"stock":"60"},{"id":15,"name":"스노우폼 4L","category":"파이어볼 케미컬","group":"파이어볼 4L 최대 50%","status":"normal","price":39000,"regular":60000,"stock":"40"},{"id":16,"name":"아이언번 4L","category":"파이어볼 케미컬","group":"파이어볼 4L 최대 50%","status":"normal","price":48000,"regular":80000,"stock":"20"},{"id":17,"name":"아이언번 SE 4L","category":"파이어볼 케미컬","group":"파이어볼 4L 최대 50%","status":"normal","price":60000,"regular":100000,"stock":"100"},{"id":18,"name":"알칼리 프리워시 4L","category":"파이어볼 케미컬","group":"파이어볼 4L 최대 50%","status":"normal","price":30000,"regular":60000,"stock":"300"},{"id":19,"name":"야누스 4L","category":"파이어볼 케미컬","group":"파이어볼 4L","status":"normal","price":55000,"regular":110000,"stock":"40"},{"id":20,"name":"워터 스팟+ 4L","category":"파이어볼 케미컬","group":"파이어볼 4L","status":"normal","price":32500,"regular":50000,"stock":"20"},{"id":21,"name":"워터리스 다이렉트 4L","category":"파이어볼 케미컬","group":"파이어볼 4L","status":"normal","price":32500,"regular":50000,"stock":"20"},{"id":22,"name":"워터리스 맥스 4L","category":"파이어볼 케미컬","group":"파이어볼 4L","status":"normal","price":45000,"regular":90000,"stock":"60"},{"id":23,"name":"이지코트 엑스트라 4L","category":"파이어볼 케미컬","group":"파이어볼 4L","status":"normal","price":78000,"regular":130000,"stock":"40"},{"id":24,"name":"중성 프리워시 4L","category":"파이어볼 케미컬","group":"파이어볼 4L","status":"normal","price":30000,"regular":50000,"stock":"80"},{"id":25,"name":"탱크 4L","category":"파이어볼 케미컬","group":"파이어볼 4L","status":"normal","price":108000,"regular":180000,"stock":"20"},{"id":26,"name":"트로피칼 카샴푸 4L","category":"파이어볼 케미컬","group":"파이어볼 4L","status":"normal","price":36000,"regular":60000,"stock":"20"},{"id":27,"name":"파이어볼 타월 클리너 4L","category":"파이어볼 케미컬","group":"파이어볼 4L","status":"normal","price":25000,"regular":50000,"stock":"80"},{"id":28,"name":"필루엣 4L","category":"파이어볼 케미컬","group":"파이어볼 4L","status":"normal","price":72000,"regular":120000,"stock":"20"},{"id":29,"name":"하이드로 샴푸 4L","category":"파이어볼 케미컬","group":"파이어볼 4L","status":"normal","price":45000,"regular":90000,"stock":"8"},{"id":30,"name":"하이드로 폼 4L","category":"파이어볼 케미컬","group":"파이어볼 4L","status":"normal","price":52000,"regular":80000,"stock":"8"},{"id":31,"name":"휠+아이언 4L","category":"파이어볼 케미컬","group":"파이어볼 4L","status":"normal","price":55250,"regular":85000,"stock":"20"},{"id":32,"name":"휠앤타이어 4L","category":"파이어볼 케미컬","group":"파이어볼 4L","status":"normal","price":30000,"regular":60000,"stock":"300"},{"id":33,"name":"마리포사 4L","category":"파이어볼 케미컬","group":"파이어볼 4L","status":"new","price":48000,"regular":80000,"stock":"300"},{"id":34,"name":"트림앤타이어 4L","category":"파이어볼 케미컬","group":"파이어볼 4L","status":"new","price":54000,"regular":90000,"stock":"48"},{"id":35,"name":"pH3 산성 카샴푸 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":12600,"regular":18000,"stock":"510"},{"id":36,"name":"그레이스 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":14300,"regular":22000,"stock":"30"},{"id":37,"name":"글라스 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":6300,"regular":9000,"stock":"120"},{"id":38,"name":"글로스 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":14300,"regular":22000,"stock":"30"},{"id":39,"name":"나파코트 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":12600,"regular":18000,"stock":"210"},{"id":40,"name":"나파클리너 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":10500,"regular":15000,"stock":"180"},{"id":41,"name":"리본 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":11200,"regular":16000,"stock":"210"},{"id":42,"name":"버그 클리너 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":8400,"regular":12000,"stock":"30"},{"id":43,"name":"사틴 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":14300,"regular":22000,"stock":"30"},{"id":44,"name":"쇼카 듀크 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":21000,"regular":35000,"stock":"600"},{"id":45,"name":"쇼카 샴푸 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":13000,"regular":20000,"stock":"390"},{"id":46,"name":"쇼카 타이어 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":16800,"regular":28000,"stock":"210"},{"id":47,"name":"스노우폼 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":10500,"regular":15000,"stock":"30"},{"id":48,"name":"아이언번 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":9100,"regular":13000,"stock":"90"},{"id":49,"name":"알칼리 프리워시 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":9800,"regular":14000,"stock":"300"},{"id":50,"name":"야누스 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":15600,"regular":24000,"stock":"120"},{"id":51,"name":"워터 스팟+ 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":null,"regular":null,"stock":"X"},{"id":52,"name":"워터리스 다이렉트 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":8400,"regular":12000,"stock":"30"},{"id":53,"name":"워터리스 맥스 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":16800,"regular":28000,"stock":"180"},{"id":54,"name":"이지코트 엑스트라 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":18000,"regular":30000,"stock":"30"},{"id":55,"name":"중성 프리워시 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":8400,"regular":12000,"stock":"30"},{"id":56,"name":"탱크 400ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":19200,"regular":32000,"stock":"30"},{"id":57,"name":"트로피칼 카샴푸 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":10500,"regular":15000,"stock":"30"},{"id":58,"name":"타르 리무버 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":13300,"regular":19000,"stock":"30"},{"id":59,"name":"타월 클리너 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":7000,"regular":10000,"stock":"300"},{"id":60,"name":"필루엣 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":16800,"regular":28000,"stock":"30"},{"id":61,"name":"하이드로 글라스 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":7700,"regular":11000,"stock":"210"},{"id":62,"name":"하이드로 샴푸 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":13000,"regular":20000,"stock":"30"},{"id":63,"name":"하이드로 폼 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":12600,"regular":18000,"stock":"30"},{"id":64,"name":"휠+아이언 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":11900,"regular":17000,"stock":"30"},{"id":65,"name":"휠앤타이어 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":9100,"regular":13000,"stock":"210"},{"id":66,"name":"마리포사 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"new","price":null,"regular":null,"stock":"400"},{"id":67,"name":"트림앤타이어 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"new","price":null,"regular":null,"stock":"120"},{"id":68,"name":"파이어볼 에탄올 워셔액 1.8L(12개입)","category":"파이어볼 케미컬","group":"파이어볼 250ml~1.8L","status":"normal","price":29820,"regular":42000,"stock":"100 box"},{"id":69,"name":"슈퍼스타 카샴푸 1L","category":"파이어볼 케미컬","group":"파이어볼 250ml~1.8L","status":"normal","price":9660,"regular":13800,"stock":"24"},{"id":70,"name":"파이어볼 아이언번 엑스트라 1L","category":"파이어볼 케미컬","group":"파이어볼 250ml~1.8L","status":"normal","price":14300,"regular":22000,"stock":"24"},{"id":71,"name":"글라스 쉴드 50ml","category":"코팅제","group":"파이어볼 코팅제 30% 40%","status":"normal","price":12600,"regular":18000,"stock":"120"},{"id":72,"name":"슈터 다크 100ml","category":"코팅제","group":"파이어볼 코팅제 30% 40%","status":"normal","price":21000,"regular":30000,"stock":"300"},{"id":73,"name":"슈터 브라이트 100ml","category":"코팅제","group":"파이어볼 코팅제 30% 40%","status":"normal","price":21000,"regular":30000,"stock":"300"},{"id":74,"name":"파이어볼 엔젤티얼스 II 50ml","category":"코팅제","group":"파이어볼 코팅제 30% 40%","status":"normal","price":21000,"regular":35000,"stock":"600"},{"id":75,"name":"플래시 200ml","category":"코팅제","group":"파이어볼 코팅제 30% 40%","status":"normal","price":24500,"regular":35000,"stock":"300"},{"id":76,"name":"휠 코트 50ml","category":"코팅제","group":"파이어볼 코팅제 30% 40%","status":"normal","price":21000,"regular":30000,"stock":"200"},{"id":77,"name":"왁스 부스터 50ml","category":"코팅제","group":"파이어볼 코팅제 30% 40%","status":"normal","price":21000,"regular":30000,"stock":"30"},{"id":78,"name":"바셀 100ml","category":"코팅제","group":"파이어볼 코팅제 30% 40%","status":"normal","price":14000,"regular":20000,"stock":"40"},{"id":79,"name":"나노코트 v3 50ml","category":"코팅제","group":"파이어볼 코팅제 30% 40%","status":"normal","price":12600,"regular":18000,"stock":"40"},{"id":80,"name":"포세이돈 200ml","category":"코팅제","group":"파이어볼 코팅제 30% 40%","status":"normal","price":26600,"regular":38000,"stock":"90"},{"id":81,"name":"슈터+ 100ml","category":"코팅제","group":"파이어볼 코팅제 30% 40%","status":"new","price":35000,"regular":50000,"stock":"300"},{"id":82,"name":"바셀+ 100ml","category":"코팅제","group":"파이어볼 코팅제 30% 40%","status":"new","price":21000,"regular":30000,"stock":"300"},{"id":83,"name":"고광택 발수왁스 4L","category":"바인더","group":"바인더 4L 최대 70%","status":"normal","price":37800,"regular":54000,"stock":"8"},{"id":84,"name":"버그 클리너 4L","category":"바인더","group":"바인더 4L 최대 70%","status":"normal","price":25920,"regular":32400,"stock":"8"},{"id":85,"name":"유리 세정제 4L","category":"바인더","group":"바인더 4L 최대 70%","status":"normal","price":25920,"regular":32400,"stock":"8"},{"id":86,"name":"익스트림 타이어 코팅 왁스 4L","category":"바인더","group":"바인더 4L 최대 70%","status":"normal","price":56700,"regular":81000,"stock":"8"},{"id":87,"name":"익스트림 휠 세정제 + 4L","category":"바인더","group":"바인더 4L 최대 70%","status":"normal","price":37800,"regular":54000,"stock":"8"},{"id":88,"name":"인테리어 원스텝 4L","category":"바인더","group":"바인더 4L 최대 70%","status":"normal","price":30240,"regular":43200,"stock":"8"},{"id":89,"name":"인테리어 클리너 4L","category":"바인더","group":"바인더 4L 최대 70%","status":"normal","price":30240,"regular":43200,"stock":"8"},{"id":90,"name":"중성 프리워시 4L","category":"바인더","group":"바인더 4L 최대 70%","status":"normal","price":24000,"regular":30000,"stock":"8"},{"id":91,"name":"타월&패드 클리너 4L","category":"바인더","group":"바인더 4L 최대 70%","status":"normal","price":21000,"regular":30000,"stock":"8"},{"id":92,"name":"프리미엄 슬릭왁스 4L","category":"바인더","group":"바인더 4L 최대 70%","status":"normal","price":30240,"regular":43200,"stock":"8"},{"id":93,"name":"프리미엄 철분 제거제 4L","category":"바인더","group":"바인더 4L 최대 70%","status":"normal","price":37800,"regular":54000,"stock":"8"},{"id":94,"name":"프리미엄 카샴푸 4L","category":"바인더","group":"바인더 4L 최대 70%","status":"normal","price":30240,"regular":43200,"stock":"8"},{"id":95,"name":"프리미엄 프리워시 (알칼리) 4L","category":"바인더","group":"바인더 4L 최대 70%","status":"normal","price":27000,"regular":54000,"stock":"8"},{"id":96,"name":"프리미엄 휠&타이어 4L","category":"바인더","group":"바인더 4L 최대 70%","status":"normal","price":30240,"regular":37800,"stock":"8"},{"id":97,"name":"고광택 발수왁스 500ml","category":"바인더","group":"바인더 500ml 20%할인","status":"normal","price":8000,"regular":10000,"stock":"30"},{"id":98,"name":"버그클리너 500ml","category":"바인더","group":"바인더 500ml 20%할인","status":"normal","price":4800,"regular":6000,"stock":"30"},{"id":99,"name":"슬릭왁스 500ml","category":"바인더","group":"바인더 500ml 20%할인","status":"normal","price":6400,"regular":8000,"stock":"30"},{"id":100,"name":"유리세정제 500ml","category":"바인더","group":"바인더 500ml 20%할인","status":"normal","price":4800,"regular":6000,"stock":"30"},{"id":101,"name":"익스트림 타이어 코팅왁스 500ml","category":"바인더","group":"바인더 500ml 20%할인","status":"normal","price":12000,"regular":15000,"stock":"30"},{"id":102,"name":"익스트림 휠 세정제+500ml","category":"바인더","group":"바인더 500ml 20%할인","status":"normal","price":8000,"regular":10000,"stock":"30"},{"id":103,"name":"인테리어 원스텝 500ml","category":"바인더","group":"바인더 500ml 20%할인","status":"normal","price":8000,"regular":10000,"stock":"30"},{"id":104,"name":"인테리어 클리너 500ml","category":"바인더","group":"바인더 500ml 20%할인","status":"normal","price":6400,"regular":8000,"stock":"30"},{"id":105,"name":"중성 프리워시 1L","category":"바인더","group":"바인더 500ml 20%할인","status":"normal","price":8000,"regular":10000,"stock":"30"},{"id":106,"name":"철분제거제 500ml","category":"바인더","group":"바인더 500ml 20%할인","status":"normal","price":8000,"regular":10000,"stock":"30"},{"id":107,"name":"카샴푸 블루 500ml","category":"바인더","group":"바인더 500ml 20%할인","status":"normal","price":6400,"regular":8000,"stock":"30"},{"id":108,"name":"타월&패드 클리너 1L","category":"바인더","group":"바인더 500ml 20%할인","status":"normal","price":8000,"regular":10000,"stock":"30"},{"id":109,"name":"프리미엄 프리워시 500ml","category":"바인더","group":"바인더 500ml 20%할인","status":"normal","price":8000,"regular":10000,"stock":"30"},{"id":110,"name":"휠앤타이어 클리너 500ml","category":"바인더","group":"바인더 500ml 20%할인","status":"normal","price":5600,"regular":7000,"stock":"30"},{"id":111,"name":"블랙 PP용기) PPF 왁스 150ml","category":"고체왁스","group":"파이어볼 고체왁스 PP 150ml","status":"normal","price":79000,"regular":130000,"stock":"10"},{"id":112,"name":"블랙 PP용기) 고스트 150ml","category":"고체왁스","group":"파이어볼 고체왁스 PP 150ml","status":"normal","price":89000,"regular":160000,"stock":"20"},{"id":113,"name":"블랙 PP용기) 리버티왁스 150ml","category":"고체왁스","group":"파이어볼 고체왁스 PP 150ml","status":"limited","price":49000,"regular":120000,"stock":"6"},{"id":114,"name":"블랙 PP용기) 브라질 150ml","category":"고체왁스","group":"파이어볼 고체왁스 PP 150ml","status":"limited","price":59000,"regular":140000,"stock":"134"},{"id":115,"name":"블랙 PP용기) 블랙왁스 150ml","category":"고체왁스","group":"파이어볼 고체왁스 PP 150ml","status":"normal","price":69000,"regular":120000,"stock":"20"},{"id":116,"name":"블랙 PP용기) 섹시레이디 150ml","category":"고체왁스","group":"파이어볼 고체왁스 PP 150ml","status":"limited","price":59000,"regular":130000,"stock":"53"},{"id":117,"name":"블랙 PP용기) 쇼카 그래핀 150ml","category":"고체왁스","group":"파이어볼 고체왁스 PP 150ml","status":"normal","price":69000,"regular":120000,"stock":"10"},{"id":118,"name":"블랙 PP용기) 쇼카 밀크크림 150ml","category":"고체왁스","group":"파이어볼 고체왁스 PP 150ml","status":"limited","price":49000,"regular":120000,"stock":"67"},{"id":119,"name":"블랙 PP용기) 쇼카 버터 150ml","category":"고체왁스","group":"파이어볼 고체왁스 PP 150ml","status":"limited","price":49000,"regular":120000,"stock":"18"},{"id":120,"name":"블랙 PP용기) 쇼카 체리블라썸 150ml","category":"고체왁스","group":"파이어볼 고체왁스 PP 150ml","status":"limited","price":49000,"regular":120000,"stock":"29"},{"id":121,"name":"블랙 PP용기) 쇼카 캔디샤베트 150ml","category":"고체왁스","group":"파이어볼 고체왁스 PP 150ml","status":"limited","price":49000,"regular":120000,"stock":"52"},{"id":122,"name":"블랙 PP용기) 쇼카 휠 왁스 150ml","category":"고체왁스","group":"파이어볼 고체왁스 PP 150ml","status":"limited","price":49000,"regular":120000,"stock":"78"},{"id":123,"name":"블랙 PP용기) 에일리언블러드 150ml","category":"고체왁스","group":"파이어볼 고체왁스 PP 150ml","status":"normal","price":69000,"regular":120000,"stock":"20"},{"id":124,"name":"블랙 PP용기) 퓨전 150ml","category":"고체왁스","group":"파이어볼 고체왁스 PP 150ml","status":"normal","price":79000,"regular":140000,"stock":"5"},{"id":125,"name":"블랙 PP용기) 화이트왁스 150ml","category":"고체왁스","group":"파이어볼 고체왁스 PP 150ml","status":"normal","price":69000,"regular":120000,"stock":"70"},{"id":126,"name":"블랙 PP용기) 몽 150ml","category":"고체왁스","group":"파이어볼 고체왁스 PP 150ml","status":"normal","price":89000,"regular":160000,"stock":"300"},{"id":127,"name":"블랙 PP용기) 퓨전Z 150ml","category":"고체왁스","group":"파이어볼 고체왁스 PP 150ml","status":"normal","price":89000,"regular":160000,"stock":"80"},{"id":128,"name":"블랙 PP용기) 판타지아 왁스 150ml","category":"고체왁스","group":"파이어볼 고체왁스 PP 150ml","status":"new","price":79000,"regular":130000,"stock":"300"},{"id":129,"name":"원형 아크릴 용기) PPF 왁스 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":130000,"regular":190000,"stock":""},{"id":130,"name":"원형 아크릴 용기) 고스트 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":160000,"regular":230000,"stock":""},{"id":131,"name":"원형 아크릴 용기) 리버티왁스 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":110000,"regular":170000,"stock":""},{"id":132,"name":"원형 아크릴 용기) 브라질 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":140000,"regular":210000,"stock":""},{"id":133,"name":"원형 아크릴 용기) 블랙왁스 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":110000,"regular":170000,"stock":""},{"id":134,"name":"원형 아크릴 용기) 섹시레이디 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":130000,"regular":190000,"stock":""},{"id":135,"name":"원형 아크릴 용기) 쇼카 그래핀 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":110000,"regular":170000,"stock":""},{"id":136,"name":"원형 아크릴 용기) 쇼카 밀크크림 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":110000,"regular":170000,"stock":""},{"id":137,"name":"원형 아크릴 용기) 쇼카 버터 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":110000,"regular":170000,"stock":""},{"id":138,"name":"원형 아크릴 용기) 쇼카 에일리언 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":110000,"regular":170000,"stock":""},{"id":139,"name":"원형 아크릴 용기) 쇼카 체리블라썸 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":110000,"regular":170000,"stock":""},{"id":140,"name":"원형 아크릴 용기) 쇼카 캔디샤베트 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":110000,"regular":170000,"stock":""},{"id":141,"name":"원형 아크릴 용기) 쇼카 휠 왁스 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":110000,"regular":170000,"stock":""},{"id":142,"name":"원형 아크릴 용기) 화이트 왁스 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":110000,"regular":170000,"stock":""},{"id":143,"name":"원형 아크릴 용기) 판타지아 왁스 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"new","price":130000,"regular":190000,"stock":""},{"id":144,"name":"사각 아크릴 용기) PPF 왁스 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":150000,"regular":220000,"stock":""},{"id":145,"name":"사각 아크릴 용기) 고스트 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":180000,"regular":280000,"stock":""},{"id":146,"name":"사각 아크릴 용기) 리버티왁스 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":120000,"regular":200000,"stock":""},{"id":147,"name":"사각 아크릴 용기) 브라질 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":160000,"regular":250000,"stock":""},{"id":148,"name":"사각 아크릴 용기) 블랙왁스 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":120000,"regular":200000,"stock":""},{"id":149,"name":"사각 아크릴 용기) 섹시레이디 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":150000,"regular":220000,"stock":""},{"id":150,"name":"사각 아크릴 용기) 쇼카 그래핀 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":120000,"regular":200000,"stock":""},{"id":151,"name":"사각 아크릴 용기) 쇼카 밀크크림 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":120000,"regular":200000,"stock":""},{"id":152,"name":"사각 아크릴 용기) 쇼카 버터 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":120000,"regular":200000,"stock":""},{"id":153,"name":"사각 아크릴 용기) 쇼카 에일리언 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":120000,"regular":200000,"stock":""},{"id":154,"name":"사각 아크릴 용기) 쇼카 체리블라썸 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":120000,"regular":200000,"stock":""},{"id":155,"name":"사각 아크릴 용기) 쇼카 캔디샤베트 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":120000,"regular":200000,"stock":""},{"id":156,"name":"사각 아크릴 용기) 쇼카 휠 왁스 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":120000,"regular":200000,"stock":""},{"id":157,"name":"사각 아크릴 용기) 화이트 왁스 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":120000,"regular":200000,"stock":""},{"id":158,"name":"사각 아크릴 용기) 판타지아 왁스 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"new","price":150000,"regular":220000,"stock":""},{"id":159,"name":"파이어볼 카향수 루비 500ml","category":"향장품","group":"향장품","status":"normal","price":14400,"regular":18000,"stock":"325"},{"id":160,"name":"파이어볼 카향수 쇼카스카이 500ml","category":"향장품","group":"향장품","status":"normal","price":14400,"regular":18000,"stock":"325"},{"id":161,"name":"파이어볼 카향수 리본 500ml","category":"향장품","group":"향장품","status":"normal","price":14400,"regular":18000,"stock":"325"},{"id":162,"name":"파이어볼 카향수 엠페라도 500ml","category":"향장품","group":"향장품","status":"normal","price":14400,"regular":18000,"stock":"325"},{"id":163,"name":"파이어볼 디퓨저 플라워 하우스 120ml","category":"향장품","group":"향장품","status":"normal","price":11200,"regular":16000,"stock":"100"},{"id":164,"name":"파이어볼 디퓨저 핑크자몽 120ml","category":"향장품","group":"향장품","status":"normal","price":11200,"regular":16000,"stock":"100"},{"id":165,"name":"더스트 트랩","category":"세차용품 부속품","group":"액세서리","status":"accessory","price":4800,"regular":6000,"stock":""},{"id":166,"name":"불투명 칼라 버킷 18L","category":"세차용품 부속품","group":"액세서리","status":"accessory","price":3000,"regular":10000,"stock":"각 240개씩"},{"id":167,"name":"양면 드라잉 타월 헤비 90x70(중국산)","category":"세차용품 부속품","group":"액세서리","status":"accessory","price":10000,"regular":20000,"stock":"500"},{"id":168,"name":"투명 버킷 18L","category":"세차용품 부속품","group":"액세서리","status":"accessory","price":8800,"regular":11000,"stock":"각 100개씩"},{"id":169,"name":"프리미엄 트위스트 드라잉 타월 중 70x90","category":"세차용품 부속품","group":"액세서리","status":"accessory","price":5500,"regular":9900,"stock":"500"},{"id":170,"name":"화이트 어플리케이터","category":"세차용품 부속품","group":"액세서리","status":"accessory","price":2200,"regular":2900,"stock":""},{"id":171,"name":"휠버킷 7L","category":"세차용품 부속품","group":"액세서리","status":"accessory","price":4800,"regular":6000,"stock":""}];
+const PRODUCTS = [
+  {"id":3,"name":"pH3 산성 카샴푸 4L","category":"파이어볼 케미컬","group":"파이어볼 4L 최대 50%","status":"normal","price":35000,"regular":70000,"stock":"400"},
+  {"id":4,"name":"그레이스 4L","category":"파이어볼 케미컬","group":"파이어볼 4L 최대 50%","status":"normal","price":44000,"regular":88000,"stock":"40"},
+  {"id":5,"name":"글라스 4L","category":"파이어볼 케미컬","group":"파이어볼 4L 최대 50%","status":"normal","price":25000,"regular":45000,"stock":"40"},
+  {"id":6,"name":"글로스 4L","category":"파이어볼 케미컬","group":"파이어볼 4L 최대 50%","status":"normal","price":65000,"regular":100000,"stock":"28"},
+  {"id":7,"name":"나파코트 4L","category":"파이어볼 케미컬","group":"파이어볼 4L 최대 50%","status":"normal","price":39000,"regular":60000,"stock":"40"},
+  {"id":8,"name":"나파클리너 4L","category":"파이어볼 케미컬","group":"파이어볼 4L 최대 50%","status":"normal","price":36000,"regular":60000,"stock":"40"},
+  {"id":9,"name":"리본 4L","category":"파이어볼 케미컬","group":"파이어볼 4L 최대 50%","status":"normal","price":36000,"regular":60000,"stock":"80"},
+  {"id":10,"name":"버그 클리너 4L","category":"파이어볼 케미컬","group":"파이어볼 4L 최대 50%","status":"normal","price":25000,"regular":50000,"stock":"80"},
+  {"id":11,"name":"사틴 4L","category":"파이어볼 케미컬","group":"파이어볼 4L 최대 50%","status":"normal","price":60000,"regular":100000,"stock":"20"},
+  {"id":12,"name":"쇼카 듀크 4L","category":"파이어볼 케미컬","group":"파이어볼 4L 최대 50%","status":"normal","price":null,"regular":null,"stock":"X"},
+  {"id":13,"name":"쇼카 샴푸 4L","category":"파이어볼 케미컬","group":"파이어볼 4L 최대 50%","status":"normal","price":40000,"regular":80000,"stock":"200"},
+  {"id":14,"name":"쇼카 타이어 4L","category":"파이어볼 케미컬","group":"파이어볼 4L 최대 50%","status":"normal","price":72000,"regular":120000,"stock":"60"},
+  {"id":15,"name":"스노우폼 4L","category":"파이어볼 케미컬","group":"파이어볼 4L 최대 50%","status":"normal","price":39000,"regular":60000,"stock":"40"},
+  {"id":16,"name":"아이언번 4L","category":"파이어볼 케미컬","group":"파이어볼 4L 최대 50%","status":"normal","price":48000,"regular":80000,"stock":"20"},
+  {"id":17,"name":"아이언번 SE 4L","category":"파이어볼 케미컬","group":"파이어볼 4L 최대 50%","status":"normal","price":60000,"regular":100000,"stock":"100"},
+  {"id":18,"name":"알칼리 프리워시 4L","category":"파이어볼 케미컬","group":"파이어볼 4L 최대 50%","status":"normal","price":30000,"regular":60000,"stock":"300"},
+  {"id":19,"name":"야누스 4L","category":"파이어볼 케미컬","group":"파이어볼 4L","status":"normal","price":55000,"regular":110000,"stock":"40"},
+  {"id":20,"name":"워터 스팟+ 4L","category":"파이어볼 케미컬","group":"파이어볼 4L","status":"normal","price":32500,"regular":50000,"stock":"20"},
+  {"id":21,"name":"워터리스 다이렉트 4L","category":"파이어볼 케미컬","group":"파이어볼 4L","status":"normal","price":32500,"regular":50000,"stock":"20"},
+  {"id":22,"name":"워터리스 맥스 4L","category":"파이어볼 케미컬","group":"파이어볼 4L","status":"normal","price":45000,"regular":90000,"stock":"60"},
+  {"id":23,"name":"이지코트 엑스트라 4L","category":"파이어볼 케미컬","group":"파이어볼 4L","status":"normal","price":78000,"regular":130000,"stock":"40"},
+  {"id":24,"name":"중성 프리워시 4L","category":"파이어볼 케미컬","group":"파이어볼 4L","status":"normal","price":30000,"regular":50000,"stock":"80"},
+  {"id":25,"name":"탱크 4L","category":"파이어볼 케미컬","group":"파이어볼 4L","status":"normal","price":108000,"regular":180000,"stock":"20"},
+  {"id":26,"name":"트로피칼 카샴푸 4L","category":"파이어볼 케미컬","group":"파이어볼 4L","status":"normal","price":36000,"regular":60000,"stock":"20"},
+  {"id":27,"name":"파이어볼 타월 클리너 4L","category":"파이어볼 케미컬","group":"파이어볼 4L","status":"normal","price":25000,"regular":50000,"stock":"80"},
+  {"id":28,"name":"필루엣 4L","category":"파이어볼 케미컬","group":"파이어볼 4L","status":"normal","price":72000,"regular":120000,"stock":"20"},
+  {"id":29,"name":"하이드로 샴푸 4L","category":"파이어볼 케미컬","group":"파이어볼 4L","status":"normal","price":45000,"regular":90000,"stock":"8"},
+  {"id":30,"name":"하이드로 폼 4L","category":"파이어볼 케미컬","group":"파이어볼 4L","status":"normal","price":52000,"regular":80000,"stock":"8"},
+  {"id":31,"name":"휠+아이언 4L","category":"파이어볼 케미컬","group":"파이어볼 4L","status":"normal","price":55250,"regular":85000,"stock":"20"},
+  {"id":32,"name":"휠앤타이어 4L","category":"파이어볼 케미컬","group":"파이어볼 4L","status":"normal","price":30000,"regular":60000,"stock":"300"},
+  {"id":33,"name":"마리포사 4L","category":"파이어볼 케미컬","group":"파이어볼 4L","status":"new","price":48000,"regular":80000,"stock":"300"},
+  {"id":34,"name":"트림앤타이어 4L","category":"파이어볼 케미컬","group":"파이어볼 4L","status":"new","price":54000,"regular":90000,"stock":"48"},
+  {"id":35,"name":"pH3 산성 카샴푸 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":12600,"regular":18000,"stock":"510"},
+  {"id":36,"name":"그레이스 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":14300,"regular":22000,"stock":"30"},
+  {"id":37,"name":"글라스 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":6300,"regular":9000,"stock":"120"},
+  {"id":38,"name":"글로스 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":14300,"regular":22000,"stock":"30"},
+  {"id":39,"name":"나파코트 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":12600,"regular":18000,"stock":"210"},
+  {"id":40,"name":"나파클리너 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":10500,"regular":15000,"stock":"180"},
+  {"id":41,"name":"리본 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":11200,"regular":16000,"stock":"210"},
+  {"id":42,"name":"버그 클리너 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":8400,"regular":12000,"stock":"30"},
+  {"id":43,"name":"사틴 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":14300,"regular":22000,"stock":"30"},
+  {"id":44,"name":"쇼카 듀크 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":21000,"regular":35000,"stock":"600"},
+  {"id":45,"name":"쇼카 샴푸 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":13000,"regular":20000,"stock":"390"},
+  {"id":46,"name":"쇼카 타이어 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":16800,"regular":28000,"stock":"210"},
+  {"id":47,"name":"스노우폼 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":10500,"regular":15000,"stock":"30"},
+  {"id":48,"name":"아이언번 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":9100,"regular":13000,"stock":"90"},
+  {"id":49,"name":"알칼리 프리워시 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":9800,"regular":14000,"stock":"300"},
+  {"id":50,"name":"야누스 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":15600,"regular":24000,"stock":"120"},
+  {"id":51,"name":"워터 스팟+ 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":null,"regular":null,"stock":"X"},
+  {"id":52,"name":"워터리스 다이렉트 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":8400,"regular":12000,"stock":"30"},
+  {"id":53,"name":"워터리스 맥스 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":16800,"regular":28000,"stock":"180"},
+  {"id":54,"name":"이지코트 엑스트라 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":18000,"regular":30000,"stock":"30"},
+  {"id":55,"name":"중성 프리워시 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":8400,"regular":12000,"stock":"30"},
+  {"id":56,"name":"탱크 400ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":19200,"regular":32000,"stock":"30"},
+  {"id":57,"name":"트로피칼 카샴푸 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":10500,"regular":15000,"stock":"30"},
+  {"id":58,"name":"타르 리무버 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":13300,"regular":19000,"stock":"30"},
+  {"id":59,"name":"타월 클리너 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":7000,"regular":10000,"stock":"300"},
+  {"id":60,"name":"필루엣 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":16800,"regular":28000,"stock":"30"},
+  {"id":61,"name":"하이드로 글라스 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":7700,"regular":11000,"stock":"210"},
+  {"id":62,"name":"하이드로 샴푸 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":13000,"regular":20000,"stock":"30"},
+  {"id":63,"name":"하이드로 폼 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":12600,"regular":18000,"stock":"30"},
+  {"id":64,"name":"휠+아이언 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":11900,"regular":17000,"stock":"30"},
+  {"id":65,"name":"휠앤타이어 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"normal","price":9100,"regular":13000,"stock":"210"},
+  {"id":66,"name":"마리포사 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"new","price":null,"regular":null,"stock":"400"},
+  {"id":67,"name":"트림앤타이어 500ml","category":"파이어볼 케미컬","group":"파이어볼 400~500ml 30% 35% 40%","status":"new","price":null,"regular":null,"stock":"120"},
+  {"id":68,"name":"파이어볼 에탄올 워셔액 1.8L(12개입)","category":"파이어볼 케미컬","group":"파이어볼 250ml~1.8L","status":"normal","price":29820,"regular":42000,"stock":"100 box"},
+  {"id":69,"name":"슈퍼스타 카샴푸 1L","category":"파이어볼 케미컬","group":"파이어볼 250ml~1.8L","status":"normal","price":9660,"regular":13800,"stock":"24"},
+  {"id":70,"name":"파이어볼 아이언번 엑스트라 1L","category":"파이어볼 케미컬","group":"파이어볼 250ml~1.8L","status":"normal","price":14300,"regular":22000,"stock":"24"},
+  {"id":71,"name":"글라스 쉴드 50ml","category":"코팅제","group":"파이어볼 코팅제 30% 40%","status":"normal","price":12600,"regular":18000,"stock":"120"},
+  {"id":72,"name":"슈터 다크 100ml","category":"코팅제","group":"파이어볼 코팅제 30% 40%","status":"normal","price":21000,"regular":30000,"stock":"300"},
+  {"id":73,"name":"슈터 브라이트 100ml","category":"코팅제","group":"파이어볼 코팅제 30% 40%","status":"normal","price":21000,"regular":30000,"stock":"300"},
+  {"id":74,"name":"파이어볼 엔젤티얼스 II 50ml","category":"코팅제","group":"파이어볼 코팅제 30% 40%","status":"normal","price":21000,"regular":35000,"stock":"600"},
+  {"id":75,"name":"플래시 200ml","category":"코팅제","group":"파이어볼 코팅제 30% 40%","status":"normal","price":24500,"regular":35000,"stock":"300"},
+  {"id":76,"name":"휠 코트 50ml","category":"코팅제","group":"파이어볼 코팅제 30% 40%","status":"normal","price":21000,"regular":30000,"stock":"200"},
+  {"id":77,"name":"왁스 부스터 50ml","category":"코팅제","group":"파이어볼 코팅제 30% 40%","status":"normal","price":21000,"regular":30000,"stock":"30"},
+  {"id":78,"name":"바셀 100ml","category":"코팅제","group":"파이어볼 코팅제 30% 40%","status":"normal","price":14000,"regular":20000,"stock":"40"},
+  {"id":79,"name":"나노코트 v3 50ml","category":"코팅제","group":"파이어볼 코팅제 30% 40%","status":"normal","price":12600,"regular":18000,"stock":"40"},
+  {"id":80,"name":"포세이돈 200ml","category":"코팅제","group":"파이어볼 코팅제 30% 40%","status":"normal","price":26600,"regular":38000,"stock":"90"},
+  {"id":81,"name":"슈터+ 100ml","category":"코팅제","group":"파이어볼 코팅제 30% 40%","status":"new","price":35000,"regular":50000,"stock":"300"},
+  {"id":82,"name":"바셀+ 100ml","category":"코팅제","group":"파이어볼 코팅제 30% 40%","status":"new","price":21000,"regular":30000,"stock":"300"},
+  {"id":83,"name":"고광택 발수왁스 4L","category":"바인더","group":"바인더 4L 최대 70%","status":"normal","price":37800,"regular":54000,"stock":"8"},
+  {"id":84,"name":"버그 클리너 4L","category":"바인더","group":"바인더 4L 최대 70%","status":"normal","price":25920,"regular":32400,"stock":"8"},
+  {"id":85,"name":"유리 세정제 4L","category":"바인더","group":"바인더 4L 최대 70%","status":"normal","price":25920,"regular":32400,"stock":"8"},
+  {"id":86,"name":"익스트림 타이어 코팅 왁스 4L","category":"바인더","group":"바인더 4L 최대 70%","status":"normal","price":56700,"regular":81000,"stock":"8"},
+  {"id":87,"name":"익스트림 휠 세정제 + 4L","category":"바인더","group":"바인더 4L 최대 70%","status":"normal","price":37800,"regular":54000,"stock":"8"},
+  {"id":88,"name":"인테리어 원스텝 4L","category":"바인더","group":"바인더 4L 최대 70%","status":"normal","price":30240,"regular":43200,"stock":"8"},
+  {"id":89,"name":"인테리어 클리너 4L","category":"바인더","group":"바인더 4L 최대 70%","status":"normal","price":30240,"regular":43200,"stock":"8"},
+  {"id":90,"name":"중성 프리워시 4L","category":"바인더","group":"바인더 4L 최대 70%","status":"normal","price":24000,"regular":30000,"stock":"8"},
+  {"id":91,"name":"타월&패드 클리너 4L","category":"바인더","group":"바인더 4L 최대 70%","status":"normal","price":21000,"regular":30000,"stock":"8"},
+  {"id":92,"name":"프리미엄 슬릭왁스 4L","category":"바인더","group":"바인더 4L 최대 70%","status":"normal","price":30240,"regular":43200,"stock":"8"},
+  {"id":93,"name":"프리미엄 철분 제거제 4L","category":"바인더","group":"바인더 4L 최대 70%","status":"normal","price":37800,"regular":54000,"stock":"8"},
+  {"id":94,"name":"프리미엄 카샴푸 4L","category":"바인더","group":"바인더 4L 최대 70%","status":"normal","price":30240,"regular":43200,"stock":"8"},
+  {"id":95,"name":"프리미엄 프리워시 (알칼리) 4L","category":"바인더","group":"바인더 4L 최대 70%","status":"normal","price":27000,"regular":54000,"stock":"8"},
+  {"id":96,"name":"프리미엄 휠&타이어 4L","category":"바인더","group":"바인더 4L 최대 70%","status":"normal","price":30240,"regular":37800,"stock":"8"},
+  {"id":97,"name":"고광택 발수왁스 500ml","category":"바인더","group":"바인더 500ml 20%할인","status":"normal","price":8000,"regular":10000,"stock":"30"},
+  {"id":98,"name":"버그클리너 500ml","category":"바인더","group":"바인더 500ml 20%할인","status":"normal","price":4800,"regular":6000,"stock":"30"},
+  {"id":99,"name":"슬릭왁스 500ml","category":"바인더","group":"바인더 500ml 20%할인","status":"normal","price":6400,"regular":8000,"stock":"30"},
+  {"id":100,"name":"유리세정제 500ml","category":"바인더","group":"바인더 500ml 20%할인","status":"normal","price":4800,"regular":6000,"stock":"30"},
+  {"id":101,"name":"익스트림 타이어 코팅왁스 500ml","category":"바인더","group":"바인더 500ml 20%할인","status":"normal","price":12000,"regular":15000,"stock":"30"},
+  {"id":102,"name":"익스트림 휠 세정제+500ml","category":"바인더","group":"바인더 500ml 20%할인","status":"normal","price":8000,"regular":10000,"stock":"30"},
+  {"id":103,"name":"인테리어 원스텝 500ml","category":"바인더","group":"바인더 500ml 20%할인","status":"normal","price":8000,"regular":10000,"stock":"30"},
+  {"id":104,"name":"인테리어 클리너 500ml","category":"바인더","group":"바인더 500ml 20%할인","status":"normal","price":6400,"regular":8000,"stock":"30"},
+  {"id":105,"name":"중성 프리워시 1L","category":"바인더","group":"바인더 500ml 20%할인","status":"normal","price":8000,"regular":10000,"stock":"30"},
+  {"id":106,"name":"철분제거제 500ml","category":"바인더","group":"바인더 500ml 20%할인","status":"normal","price":8000,"regular":10000,"stock":"30"},
+  {"id":107,"name":"카샴푸 블루 500ml","category":"바인더","group":"바인더 500ml 20%할인","status":"normal","price":6400,"regular":8000,"stock":"30"},
+  {"id":108,"name":"타월&패드 클리너 1L","category":"바인더","group":"바인더 500ml 20%할인","status":"normal","price":8000,"regular":10000,"stock":"30"},
+  {"id":109,"name":"프리미엄 프리워시 500ml","category":"바인더","group":"바인더 500ml 20%할인","status":"normal","price":8000,"regular":10000,"stock":"30"},
+  {"id":110,"name":"휠앤타이어 클리너 500ml","category":"바인더","group":"바인더 500ml 20%할인","status":"normal","price":5600,"regular":7000,"stock":"30"},
+  {"id":111,"name":"블랙 PP용기) PPF 왁스 150ml","category":"고체왁스","group":"파이어볼 고체왁스 PP 150ml","status":"normal","price":79000,"regular":130000,"stock":"10"},
+  {"id":112,"name":"블랙 PP용기) 고스트 150ml","category":"고체왁스","group":"파이어볼 고체왁스 PP 150ml","status":"normal","price":89000,"regular":160000,"stock":"20"},
+  {"id":113,"name":"블랙 PP용기) 리버티왁스 150ml","category":"고체왁스","group":"파이어볼 고체왁스 PP 150ml","status":"limited","price":49000,"regular":120000,"stock":"6"},
+  {"id":114,"name":"블랙 PP용기) 브라질 150ml","category":"고체왁스","group":"파이어볼 고체왁스 PP 150ml","status":"limited","price":59000,"regular":140000,"stock":"134"},
+  {"id":115,"name":"블랙 PP용기) 블랙왁스 150ml","category":"고체왁스","group":"파이어볼 고체왁스 PP 150ml","status":"normal","price":69000,"regular":120000,"stock":"20"},
+  {"id":116,"name":"블랙 PP용기) 섹시레이디 150ml","category":"고체왁스","group":"파이어볼 고체왁스 PP 150ml","status":"limited","price":59000,"regular":130000,"stock":"53"},
+  {"id":117,"name":"블랙 PP용기) 쇼카 그래핀 150ml","category":"고체왁스","group":"파이어볼 고체왁스 PP 150ml","status":"normal","price":69000,"regular":120000,"stock":"10"},
+  {"id":118,"name":"블랙 PP용기) 쇼카 밀크크림 150ml","category":"고체왁스","group":"파이어볼 고체왁스 PP 150ml","status":"limited","price":49000,"regular":120000,"stock":"67"},
+  {"id":119,"name":"블랙 PP용기) 쇼카 버터 150ml","category":"고체왁스","group":"파이어볼 고체왁스 PP 150ml","status":"limited","price":49000,"regular":120000,"stock":"18"},
+  {"id":120,"name":"블랙 PP용기) 쇼카 체리블라썸 150ml","category":"고체왁스","group":"파이어볼 고체왁스 PP 150ml","status":"limited","price":49000,"regular":120000,"stock":"29"},
+  {"id":121,"name":"블랙 PP용기) 쇼카 캔디샤베트 150ml","category":"고체왁스","group":"파이어볼 고체왁스 PP 150ml","status":"limited","price":49000,"regular":120000,"stock":"52"},
+  {"id":122,"name":"블랙 PP용기) 쇼카 휠 왁스 150ml","category":"고체왁스","group":"파이어볼 고체왁스 PP 150ml","status":"limited","price":49000,"regular":120000,"stock":"78"},
+  {"id":123,"name":"블랙 PP용기) 에일리언블러드 150ml","category":"고체왁스","group":"파이어볼 고체왁스 PP 150ml","status":"normal","price":69000,"regular":120000,"stock":"20"},
+  {"id":124,"name":"블랙 PP용기) 퓨전 150ml","category":"고체왁스","group":"파이어볼 고체왁스 PP 150ml","status":"normal","price":79000,"regular":140000,"stock":"5"},
+  {"id":125,"name":"블랙 PP용기) 화이트왁스 150ml","category":"고체왁스","group":"파이어볼 고체왁스 PP 150ml","status":"normal","price":69000,"regular":120000,"stock":"70"},
+  {"id":126,"name":"블랙 PP용기) 몽 150ml","category":"고체왁스","group":"파이어볼 고체왁스 PP 150ml","status":"normal","price":89000,"regular":160000,"stock":"300"},
+  {"id":127,"name":"블랙 PP용기) 퓨전Z 150ml","category":"고체왁스","group":"파이어볼 고체왁스 PP 150ml","status":"normal","price":89000,"regular":160000,"stock":"80"},
+  {"id":128,"name":"블랙 PP용기) 판타지아 왁스 150ml","category":"고체왁스","group":"파이어볼 고체왁스 PP 150ml","status":"new","price":79000,"regular":130000,"stock":"300"},
+  {"id":129,"name":"원형 아크릴 용기) PPF 왁스 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":130000,"regular":190000,"stock":""},
+  {"id":130,"name":"원형 아크릴 용기) 고스트 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":160000,"regular":230000,"stock":""},
+  {"id":131,"name":"원형 아크릴 용기) 리버티왁스 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":110000,"regular":170000,"stock":""},
+  {"id":132,"name":"원형 아크릴 용기) 브라질 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":140000,"regular":210000,"stock":""},
+  {"id":133,"name":"원형 아크릴 용기) 블랙왁스 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":110000,"regular":170000,"stock":""},
+  {"id":134,"name":"원형 아크릴 용기) 섹시레이디 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":130000,"regular":190000,"stock":""},
+  {"id":135,"name":"원형 아크릴 용기) 쇼카 그래핀 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":110000,"regular":170000,"stock":""},
+  {"id":136,"name":"원형 아크릴 용기) 쇼카 밀크크림 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":110000,"regular":170000,"stock":""},
+  {"id":137,"name":"원형 아크릴 용기) 쇼카 버터 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":110000,"regular":170000,"stock":""},
+  {"id":138,"name":"원형 아크릴 용기) 쇼카 에일리언 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":110000,"regular":170000,"stock":""},
+  {"id":139,"name":"원형 아크릴 용기) 쇼카 체리블라썸 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":110000,"regular":170000,"stock":""},
+  {"id":140,"name":"원형 아크릴 용기) 쇼카 캔디샤베트 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":110000,"regular":170000,"stock":""},
+  {"id":141,"name":"원형 아크릴 용기) 쇼카 휠 왁스 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":110000,"regular":170000,"stock":""},
+  {"id":142,"name":"원형 아크릴 용기) 화이트 왁스 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":110000,"regular":170000,"stock":""},
+  {"id":143,"name":"원형 아크릴 용기) 판타지아 왁스 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"new","price":130000,"regular":190000,"stock":""},
+  {"id":144,"name":"사각 아크릴 용기) PPF 왁스 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":150000,"regular":220000,"stock":""},
+  {"id":145,"name":"사각 아크릴 용기) 고스트 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":180000,"regular":280000,"stock":""},
+  {"id":146,"name":"사각 아크릴 용기) 리버티왁스 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":120000,"regular":200000,"stock":""},
+  {"id":147,"name":"사각 아크릴 용기) 브라질 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":160000,"regular":250000,"stock":""},
+  {"id":148,"name":"사각 아크릴 용기) 블랙왁스 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":120000,"regular":200000,"stock":""},
+  {"id":149,"name":"사각 아크릴 용기) 섹시레이디 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":150000,"regular":220000,"stock":""},
+  {"id":150,"name":"사각 아크릴 용기) 쇼카 그래핀 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":120000,"regular":200000,"stock":""},
+  {"id":151,"name":"사각 아크릴 용기) 쇼카 밀크크림 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":120000,"regular":200000,"stock":""},
+  {"id":152,"name":"사각 아크릴 용기) 쇼카 버터 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":120000,"regular":200000,"stock":""},
+  {"id":153,"name":"사각 아크릴 용기) 쇼카 에일리언 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":120000,"regular":200000,"stock":""},
+  {"id":154,"name":"사각 아크릴 용기) 쇼카 체리블라썸 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":120000,"regular":200000,"stock":""},
+  {"id":155,"name":"사각 아크릴 용기) 쇼카 캔디샤베트 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":120000,"regular":200000,"stock":""},
+  {"id":156,"name":"사각 아크릴 용기) 쇼카 휠 왁스 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":120000,"regular":200000,"stock":""},
+  {"id":157,"name":"사각 아크릴 용기) 화이트 왁스 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":120000,"regular":200000,"stock":""},
+  {"id":158,"name":"사각 아크릴 용기) 판타지아 왁스 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"new","price":150000,"regular":220000,"stock":""},
+  {"id":159,"name":"파이어볼 카향수 루비 500ml","category":"향장품","group":"향장품","status":"normal","price":14400,"regular":18000,"stock":"325"},
+  {"id":160,"name":"파이어볼 카향수 쇼카스카이 500ml","category":"향장품","group":"향장품","status":"normal","price":14400,"regular":18000,"stock":"325"},
+  {"id":161,"name":"파이어볼 카향수 리본 500ml","category":"향장품","group":"향장품","status":"normal","price":14400,"regular":18000,"stock":"325"},
+  {"id":162,"name":"파이어볼 카향수 엠페라도 500ml","category":"향장품","group":"향장품","status":"normal","price":14400,"regular":18000,"stock":"325"},
+  {"id":163,"name":"파이어볼 디퓨저 플라워 하우스 120ml","category":"향장품","group":"향장품","status":"normal","price":11200,"regular":16000,"stock":"100"},
+  {"id":164,"name":"파이어볼 디퓨저 핑크자몽 120ml","category":"향장품","group":"향장품","status":"normal","price":11200,"regular":16000,"stock":"100"},
+  {"id":165,"name":"더스트 트랩","category":"세차용품 부속품","group":"액세서리","status":"accessory","price":4800,"regular":6000,"stock":""},
+  {"id":166,"name":"불투명 칼라 버킷 18L","category":"세차용품 부속품","group":"액세서리","status":"accessory","price":3000,"regular":10000,"stock":"각 240개씩"},
+  {"id":167,"name":"양면 드라잉 타월 헤비 90x70(중국산)","category":"세차용품 부속품","group":"액세서리","status":"accessory","price":10000,"regular":20000,"stock":"500"},
+  {"id":168,"name":"투명 버킷 18L","category":"세차용품 부속품","group":"액세서리","status":"accessory","price":8800,"regular":11000,"stock":"각 100개씩"},
+  {"id":169,"name":"프리미엄 트위스트 드라잉 타월 중 70x90","category":"세차용품 부속품","group":"액세서리","status":"accessory","price":5500,"regular":9900,"stock":"500"},
+  {"id":170,"name":"화이트 어플리케이터","category":"세차용품 부속품","group":"액세서리","status":"accessory","price":2200,"regular":2900,"stock":""},
+  {"id":171,"name":"휠버킷 7L","category":"세차용품 부속품","group":"액세서리","status":"accessory","price":4800,"regular":6000,"stock":""}
+];
+
 const GIFTS=[{amount:100000,label:'10만원 이상',gift:'바인더 타월패드 클리너 4L'},{amount:200000,label:'20만원 이상',gift:'아이언번 SE 4L'},{amount:300000,label:'30만원 이상',gift:'아이언번 SE 4L + 바인더 타월클리너 4L + 슈터+ 100ml + 바셀+ 100ml'},{amount:500000,label:'50만원 이상',gift:'2구 스페셜 고체왁스 100ml + 아이언번 SE 4L + 바인더 타월클리너 4L + 슈터+ 100ml + 바셀+ 100ml'}];
+
 document.getElementById('heroGifts').innerHTML=GIFTS.map(g=>`<div class="hero-gift-card"><strong>${g.amount/10000}만</strong><p>${(g.amount>=300000?g.gift.split(' + '):[g.gift]).map(x=>String(x).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')).join('<br>')}</p></div>`).join('');
+
 const CATEGORIES=['전체','파이어볼 케미컬 4L','파이어볼 케미컬 500ml','코팅제','바인더 4L','바인더 500ml','고체왁스','향장품','세차용품 부속품'];
+
 const displayCategory=p=>p.category==='파이어볼 케미컬'?'파이어볼 케미컬 '+(/(?:^|\s)4L(?:\b|$)/i.test(p.name)?'4L':'500ml'):p.category==='바인더'?'바인더 '+(/(?:^|\s)4L(?:\b|$)/i.test(p.name)?'4L':'500ml'):p.category;
+
 const STATE={category:'전체',search:'',sort:'default',cart:{},cart2:{},activeCart:1};
+
 function readSavedCart(key){const out={};try{const x=JSON.parse(localStorage.getItem(key)||'{}');if(x&&typeof x==='object'&&!Array.isArray(x))for(const [id,qty] of Object.entries(x)){const p=PRODUCTS.find(p=>p.id===Number(id));if(p&&p.price!==null&&Number.isInteger(qty)&&qty>0)out[id]=Math.min(qty,999);}}catch(e){}return out;}
+
 STATE.cart=readSavedCart('fireball_festa_cart_2026');
+
 STATE.cart2=readSavedCart('fireball_festa_cart_2026_2');
+
 try{STATE.activeCart=localStorage.getItem('fireball_festa_active_cart')==='2'?2:1;}catch(e){}
+
 const activeCart=()=>STATE.activeCart===1?STATE.cart:STATE.cart2;
+
 function selectCart(num){if(num!==1&&num!==2)return;STATE.activeCart=num;try{localStorage.setItem('fireball_festa_active_cart',String(num));}catch(e){}renderCart();}
 const $=(id)=>document.getElementById(id);const money=n=>Math.round(n).toLocaleString('ko-KR')+'원';const safe=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
 const discountRate=p=>(p.regular>0&&p.price!==null&&p.price<p.regular)?Math.round((1-p.price/p.regular)*100):null;
+
 const visibleName=p=>p.name;
+
 function renderFilters(){const found=CATEGORIES.filter(x=>x==='전체'||PRODUCTS.some(p=>displayCategory(p)===x));$('filters').innerHTML=found.map(x=>`<button class="chip ${STATE.category===x?'active':''}" data-category="${safe(x)}">${safe(x)}</button>`).join('');$('filters').querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{STATE.category=b.dataset.category;renderFilters();renderProducts()}));}
+
 function renderProducts(){let list=PRODUCTS.filter(p=>(STATE.category==='전체'||displayCategory(p)===STATE.category)&&visibleName(p).toLowerCase().includes(STATE.search.toLowerCase()));const order=(a,b)=>a.price===null?1:b.price===null?-1:a.price-b.price;
 if(STATE.sort==='low')list.sort(order);if(STATE.sort==='high')list.sort((a,b)=>order(b,a));if(STATE.sort==='discount')list.sort((a,b)=>((b.regular&&b.price!==null)?1-b.price/b.regular:-1)-((a.regular&&a.price!==null)?1-a.price/a.regular:-1));
 $('productCount').textContent=`${list.length}개 상품`;$('productList').innerHTML=list.length?list.map(p=>{const badge=p.status==='new'?'신제품':p.status==='limited'?'한정판매':p.status==='accessory'?'부속품':'';return `<article class="product"><div class="product-head"><span class="category">${safe(displayCategory(p))}</span>${badge?`<span class="status ${p.status}">${badge}</span>`:''}</div><div class="name ${p.status==='new'?'red':p.status==='limited'?'blue':p.status==='accessory'?'':''}">${safe(visibleName(p))}</div><div class="product-bottom"><div><div class="regular">${p.regular&&p.price!==null&&p.regular>p.price?money(p.regular):'&nbsp;'}</div><div class="price">${discountRate(p)!==null?`<span class="discount-rate">${discountRate(p)}%</span>`:''}${p.price===null?'공구가 미적용':p.price.toLocaleString('ko-KR')+'<span class="won">원</span>'}</div></div><button class="add ${p.price===null?'missing':''}" ${p.price===null?'disabled':''} data-add="${p.id}">${p.price===null?'행사 미적용':'+ 담기'}</button></div></article>`}).join(''):'<div class="no-result">검색 조건에 맞는 상품이 없습니다.</div>';$('resultsFooter').textContent=`총 ${list.length}개 상품 표시`;$('productList').querySelectorAll('[data-add]').forEach(b=>b.addEventListener('click',()=>add(Number(b.dataset.add))));}
+
 function store(){try{localStorage.setItem(STATE.activeCart===1?'fireball_festa_cart_2026':'fireball_festa_cart_2026_2',JSON.stringify(activeCart()))}catch(e){}}
+
 function add(id){const p=PRODUCTS.find(x=>x.id===id);if(!p||p.price===null)return;activeCart()[id]=Math.min(999,(activeCart()[id]||0)+1);store();renderCart();const b=document.querySelector(`[data-add="${id}"]`);if(b){b.textContent='✓ 담았어요';setTimeout(()=>{if(b.isConnected)b.textContent='+ 담기'},650)}}
+
 function setQty(id,delta){if(!activeCart()[id])return;const qty=(activeCart()[id]||0)+delta;if(qty<=0)delete activeCart()[id];else activeCart()[id]=Math.min(qty,999);store();renderCart();}
+
 function removeItem(id){delete activeCart()[id];store();renderCart()}
+
 function clearCart(){if(STATE.activeCart===1)STATE.cart={};else STATE.cart2={};store();renderCart()}
+
 function renderCart(){const cart=activeCart();const items=PRODUCTS.filter(p=>cart[p.id]);const count=items.reduce((n,p)=>n+cart[p.id],0);const total=items.reduce((n,p)=>n+(p.price||0)*cart[p.id],0);const eligible=items.filter(p=>p.status!=='accessory').reduce((n,p)=>n+(p.price||0)*cart[p.id],0);const regularTotal=items.reduce((n,p)=>n+Math.max(p.regular||0,p.price||0)*cart[p.id],0);const savings=regularTotal-total;const count1=Object.values(STATE.cart).reduce((n,q)=>n+q,0),count2=Object.values(STATE.cart2).reduce((n,q)=>n+q,0);$('cartTab1').textContent='1번 장바구니 ('+count1+')';$('cartTab2').textContent='2번 장바구니 ('+count2+')';$('cartTab1').classList.toggle('active',STATE.activeCart===1);$('cartTab2').classList.toggle('active',STATE.activeCart===2);$('cartTab1').setAttribute('aria-pressed',String(STATE.activeCart===1));$('cartTab2').setAttribute('aria-pressed',String(STATE.activeCart===2));$('cartCurrent').textContent=STATE.activeCart+'번 장바구니에 담는 중';$('mobileCartLabel').textContent=STATE.activeCart+'번 장바구니 예상 합계';$('cartCount').textContent=count;$('topCount').textContent=count;$('mobileCount').textContent=count;$('mobileTotal').textContent=money(total);$('subtotal').textContent=money(regularTotal);$('savings').textContent='− '+money(savings);$('eligible').textContent=money(eligible);$('grandTotal').textContent=money(total);
 $('cartBody').innerHTML=items.length?`<div class="cart-list">${items.map(p=>`<div class="cart-item"><div><div class="cart-item-name">${safe(visibleName(p))}</div><div class="cart-item-price">${money(p.price)} × ${cart[p.id]} · ${money(p.price*cart[p.id])}</div>${p.status==='accessory'?'<div class="stock-note">사은품 인정 금액 제외</div>':''}</div><div class="cart-item-right"><div class="qty"><button aria-label="수량 감소" data-minus="${p.id}">−</button><span>${cart[p.id]}</span><button aria-label="수량 증가" data-plus="${p.id}">+</button></div><button class="remove" data-remove="${p.id}">삭제</button></div></div>`).join('')}</div>`:'<div class="cart-empty"><div class="empty-icon">▣</div><strong>장바구니가 비어 있어요</strong>상품의 ‘+ 담기’ 버튼을 눌러보세요.</div>';
 $('cartBody').querySelectorAll('[data-minus]').forEach(b=>b.addEventListener('click',()=>setQty(Number(b.dataset.minus),-1)));$('cartBody').querySelectorAll('[data-plus]').forEach(b=>b.addEventListener('click',()=>setQty(Number(b.dataset.plus),1)));$('cartBody').querySelectorAll('[data-remove]').forEach(b=>b.addEventListener('click',()=>removeItem(Number(b.dataset.remove))));
@@ -46,4 +1261,6 @@ $('eligibleGift').innerHTML=highest?`<span class="eligible-gift-label">적용 �
 
 function toggleCart(open){$('sidebar').classList.toggle('open',open);$('backdrop').classList.toggle('open',open);document.body.style.overflow=open&&window.innerWidth<=760?'hidden':''}
 $('search').addEventListener('input',e=>{STATE.search=e.target.value.trim();renderProducts()});$('sort').addEventListener('change',e=>{STATE.sort=e.target.value;renderProducts()});document.addEventListener('keydown',e=>{if(e.key==='Escape')toggleCart(false)});renderFilters();renderProducts();renderCart();
-</script></body></html>
+</script>
+</body>
+</html>
