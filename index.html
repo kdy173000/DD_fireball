@@ -22,7 +22,7 @@ const STATE={category:'전체',search:'',sort:'default',cart:{}};
 try{const x=JSON.parse(localStorage.getItem('fireball_festa_cart_2026')||'{}');if(x&&typeof x==='object')for(const [id,qty] of Object.entries(x)){const p=PRODUCTS.find(p=>p.id===Number(id));if(p&&p.price!==null&&Number.isInteger(qty)&&qty>0)STATE.cart[id]=Math.min(qty,999);}}catch(e){}
 const $=(id)=>document.getElementById(id);const money=n=>Math.round(n).toLocaleString('ko-KR')+'원';const safe=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const discountRate=p=>(p.regular>0&&p.price!==null&&p.price<p.regular)?Math.round((1-p.price/p.regular)*100):null;
-const visibleName=p=>(p.status==='new'?'(신제품) ':p.status==='limited'?'(한정판매) ':'')+p.name;
+const visibleName=p=>p.name;
 function renderFilters(){const found=CATEGORIES.filter(x=>x==='전체'||PRODUCTS.some(p=>p.category===x));$('filters').innerHTML=found.map(x=>`<button class="chip ${STATE.category===x?'active':''}" data-category="${safe(x)}">${safe(x)}</button>`).join('');$('filters').querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{STATE.category=b.dataset.category;renderFilters();renderProducts()}));}
 function renderProducts(){let list=PRODUCTS.filter(p=>(STATE.category==='전체'||p.category===STATE.category)&&visibleName(p).toLowerCase().includes(STATE.search.toLowerCase()));const order=(a,b)=>a.price===null?1:b.price===null?-1:a.price-b.price;
 if(STATE.sort==='low')list.sort(order);if(STATE.sort==='high')list.sort((a,b)=>order(b,a));if(STATE.sort==='discount')list.sort((a,b)=>((b.regular&&b.price!==null)?1-b.price/b.regular:-1)-((a.regular&&a.price!==null)?1-a.price/a.regular:-1));
