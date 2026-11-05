@@ -994,7 +994,7 @@ select {
           <div class="breakdown">
             <div class="line">
               <span>
-                정상가 합계
+                평소 판매가 합계
               </span>
               <strong id="subtotal">
                 0원
@@ -1002,7 +1002,7 @@ select {
             </div>
             <div class="line savings-line">
               <span>
-                총 할인 금액
+                페스타 추가 할인 금액
               </span>
               <strong id="savings">
                 0원
@@ -1187,42 +1187,42 @@ const PRODUCTS = [
   {"id":121,"name":"블랙 PP용기) 쇼카 캔디샤베트 150ml","category":"고체왁스","group":"파이어볼 고체왁스 PP 150ml","status":"limited","price":49000,"regular":120000,"stock":"52"},
   {"id":122,"name":"블랙 PP용기) 쇼카 휠 왁스 150ml","category":"고체왁스","group":"파이어볼 고체왁스 PP 150ml","status":"limited","price":49000,"regular":120000,"stock":"78"},
   {"id":123,"name":"블랙 PP용기) 에일리언블러드 150ml","category":"고체왁스","group":"파이어볼 고체왁스 PP 150ml","status":"normal","price":69000,"regular":120000,"stock":"20"},
-  {"id":124,"name":"블랙 PP용기) 퓨전 150ml","category":"고체왁스","group":"파이어볼 고체왁스 PP 150ml","status":"normal","price":79000,"regular":160000,"stock":"5"},
+  {"id":124,"name":"블랙 PP용기) 퓨전 150ml","category":"고체왁스","group":"파이어볼 고체왁스 PP 150ml","status":"normal","price":79000,"regular":140000,"stock":"5"},
   {"id":125,"name":"블랙 PP용기) 화이트왁스 150ml","category":"고체왁스","group":"파이어볼 고체왁스 PP 150ml","status":"normal","price":69000,"regular":120000,"stock":"70"},
   {"id":126,"name":"블랙 PP용기) 몽 150ml","category":"고체왁스","group":"파이어볼 고체왁스 PP 150ml","status":"normal","price":89000,"regular":160000,"stock":"300"},
   {"id":127,"name":"블랙 PP용기) 퓨전Z 150ml","category":"고체왁스","group":"파이어볼 고체왁스 PP 150ml","status":"normal","price":89000,"regular":160000,"stock":"80"},
   {"id":128,"name":"블랙 PP용기) 판타지아 왁스 150ml","category":"고체왁스","group":"파이어볼 고체왁스 PP 150ml","status":"new","price":79000,"regular":130000,"stock":"300"},
-  {"id":129,"name":"원형 아크릴 용기) PPF 왁스 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":130000,"regular":250000,"stock":""},
-  {"id":130,"name":"원형 아크릴 용기) 고스트 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":160000,"regular":330000,"stock":""},
-  {"id":131,"name":"원형 아크릴 용기) 리버티왁스 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":110000,"regular":230000,"stock":""},
-  {"id":132,"name":"원형 아크릴 용기) 브라질 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":140000,"regular":260000,"stock":""},
-  {"id":133,"name":"원형 아크릴 용기) 블랙왁스 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":110000,"regular":230000,"stock":""},
-  {"id":134,"name":"원형 아크릴 용기) 섹시레이디 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":130000,"regular":250000,"stock":""},
-  {"id":135,"name":"원형 아크릴 용기) 쇼카 그래핀 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":110000,"regular":230000,"stock":""},
-  {"id":136,"name":"원형 아크릴 용기) 쇼카 밀크크림 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":110000,"regular":230000,"stock":""},
-  {"id":137,"name":"원형 아크릴 용기) 쇼카 버터 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":110000,"regular":230000,"stock":""},
-  {"id":138,"name":"원형 아크릴 용기) 쇼카 에일리언 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":110000,"regular":230000,"stock":""},
-  {"id":139,"name":"원형 아크릴 용기) 쇼카 체리블라썸 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":110000,"regular":230000,"stock":""},
-  {"id":140,"name":"원형 아크릴 용기) 쇼카 캔디샤베트 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":110000,"regular":230000,"stock":""},
-  {"id":141,"name":"원형 아크릴 용기) 쇼카 휠 왁스 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":110000,"regular":230000,"stock":""},
-  {"id":142,"name":"원형 아크릴 용기) 화이트 왁스 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":110000,"regular":230000,"stock":""},
-  {"id":143,"name":"원형 아크릴 용기) 판타지아 왁스 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"new","price":130000,"regular":250000,"stock":""},
+  {"id":129,"name":"원형 아크릴 용기) PPF 왁스 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":130000,"regular":190000,"stock":""},
+  {"id":130,"name":"원형 아크릴 용기) 고스트 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":160000,"regular":230000,"stock":""},
+  {"id":131,"name":"원형 아크릴 용기) 리버티왁스 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":110000,"regular":170000,"stock":""},
+  {"id":132,"name":"원형 아크릴 용기) 브라질 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":140000,"regular":210000,"stock":""},
+  {"id":133,"name":"원형 아크릴 용기) 블랙왁스 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":110000,"regular":170000,"stock":""},
+  {"id":134,"name":"원형 아크릴 용기) 섹시레이디 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":130000,"regular":190000,"stock":""},
+  {"id":135,"name":"원형 아크릴 용기) 쇼카 그래핀 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":110000,"regular":170000,"stock":""},
+  {"id":136,"name":"원형 아크릴 용기) 쇼카 밀크크림 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":110000,"regular":170000,"stock":""},
+  {"id":137,"name":"원형 아크릴 용기) 쇼카 버터 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":110000,"regular":170000,"stock":""},
+  {"id":138,"name":"원형 아크릴 용기) 쇼카 에일리언 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":110000,"regular":170000,"stock":""},
+  {"id":139,"name":"원형 아크릴 용기) 쇼카 체리블라썸 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":110000,"regular":170000,"stock":""},
+  {"id":140,"name":"원형 아크릴 용기) 쇼카 캔디샤베트 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":110000,"regular":170000,"stock":""},
+  {"id":141,"name":"원형 아크릴 용기) 쇼카 휠 왁스 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":110000,"regular":170000,"stock":""},
+  {"id":142,"name":"원형 아크릴 용기) 화이트 왁스 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":110000,"regular":170000,"stock":""},
+  {"id":143,"name":"원형 아크릴 용기) 판타지아 왁스 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"new","price":130000,"regular":190000,"stock":""},
   {"id":172,"name":"원형 아크릴 용기) 몽 170ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":170000,"regular":330000,"stock":""},
-  {"id":144,"name":"사각 아크릴 용기) PPF 왁스 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":150000,"regular":270000,"stock":""},
-  {"id":145,"name":"사각 아크릴 용기) 고스트 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":180000,"regular":400000,"stock":""},
-  {"id":146,"name":"사각 아크릴 용기) 리버티왁스 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":120000,"regular":250000,"stock":""},
-  {"id":147,"name":"사각 아크릴 용기) 브라질 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":160000,"regular":280000,"stock":""},
-  {"id":148,"name":"사각 아크릴 용기) 블랙왁스 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":120000,"regular":250000,"stock":""},
-  {"id":149,"name":"사각 아크릴 용기) 섹시레이디 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":150000,"regular":270000,"stock":""},
-  {"id":150,"name":"사각 아크릴 용기) 쇼카 그래핀 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":120000,"regular":250000,"stock":""},
-  {"id":151,"name":"사각 아크릴 용기) 쇼카 밀크크림 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":120000,"regular":250000,"stock":""},
-  {"id":152,"name":"사각 아크릴 용기) 쇼카 버터 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":120000,"regular":250000,"stock":""},
-  {"id":153,"name":"사각 아크릴 용기) 쇼카 에일리언 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":120000,"regular":250000,"stock":""},
-  {"id":154,"name":"사각 아크릴 용기) 쇼카 체리블라썸 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":120000,"regular":250000,"stock":""},
-  {"id":155,"name":"사각 아크릴 용기) 쇼카 캔디샤베트 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":120000,"regular":250000,"stock":""},
-  {"id":156,"name":"사각 아크릴 용기) 쇼카 휠 왁스 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":120000,"regular":250000,"stock":""},
-  {"id":157,"name":"사각 아크릴 용기) 화이트 왁스 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":120000,"regular":250000,"stock":""},
-  {"id":158,"name":"사각 아크릴 용기) 판타지아 왁스 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"new","price":150000,"regular":270000,"stock":""},
+  {"id":144,"name":"사각 아크릴 용기) PPF 왁스 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":150000,"regular":220000,"stock":""},
+  {"id":145,"name":"사각 아크릴 용기) 고스트 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":180000,"regular":280000,"stock":""},
+  {"id":146,"name":"사각 아크릴 용기) 리버티왁스 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":120000,"regular":200000,"stock":""},
+  {"id":147,"name":"사각 아크릴 용기) 브라질 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":160000,"regular":250000,"stock":""},
+  {"id":148,"name":"사각 아크릴 용기) 블랙왁스 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":120000,"regular":200000,"stock":""},
+  {"id":149,"name":"사각 아크릴 용기) 섹시레이디 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":150000,"regular":220000,"stock":""},
+  {"id":150,"name":"사각 아크릴 용기) 쇼카 그래핀 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":120000,"regular":200000,"stock":""},
+  {"id":151,"name":"사각 아크릴 용기) 쇼카 밀크크림 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":120000,"regular":200000,"stock":""},
+  {"id":152,"name":"사각 아크릴 용기) 쇼카 버터 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":120000,"regular":200000,"stock":""},
+  {"id":153,"name":"사각 아크릴 용기) 쇼카 에일리언 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":120000,"regular":200000,"stock":""},
+  {"id":154,"name":"사각 아크릴 용기) 쇼카 체리블라썸 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":120000,"regular":200000,"stock":""},
+  {"id":155,"name":"사각 아크릴 용기) 쇼카 캔디샤베트 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":120000,"regular":200000,"stock":""},
+  {"id":156,"name":"사각 아크릴 용기) 쇼카 휠 왁스 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"limited","price":120000,"regular":200000,"stock":""},
+  {"id":157,"name":"사각 아크릴 용기) 화이트 왁스 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":120000,"regular":200000,"stock":""},
+  {"id":158,"name":"사각 아크릴 용기) 판타지아 왁스 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"new","price":150000,"regular":220000,"stock":""},
   {"id":173,"name":"사각 아크릴 용기) 몽 200ml","category":"고체왁스","group":"아크릴 고체왁스 170ml(원형) 200ml(사각)","status":"normal","price":200000,"regular":400000,"stock":""},
   {"id":159,"name":"파이어볼 카향수 루비 500ml","category":"향장품","group":"향장품","status":"normal","price":12600,"regular":18000,"stock":"325"},
   {"id":160,"name":"파이어볼 카향수 쇼카스카이 500ml","category":"향장품","group":"향장품","status":"normal","price":12600,"regular":18000,"stock":"325"},
@@ -1270,7 +1270,7 @@ function renderFilters(){const found=CATEGORIES.filter(x=>x==='전체'||PRODUCTS
 
 function renderProducts(){let list=PRODUCTS.filter(p=>(STATE.category==='전체'||displayCategory(p)===STATE.category)&&visibleName(p).toLowerCase().includes(STATE.search.toLowerCase()));const order=(a,b)=>a.price===null?1:b.price===null?-1:a.price-b.price;
 if(STATE.sort==='low')list.sort(order);if(STATE.sort==='high')list.sort((a,b)=>order(b,a));if(STATE.sort==='discount')list.sort((a,b)=>((b.regular&&b.price!==null)?1-b.price/b.regular:-1)-((a.regular&&a.price!==null)?1-a.price/a.regular:-1));
-$('productCount').textContent=`${list.length}개 상품`;$('productList').innerHTML=list.length?list.map(p=>{const badge=p.status==='new'?'신제품':p.status==='limited'?'한정판매':p.status==='accessory'?'부속품':'';return `<article class="product"><div class="product-head"><span class="category">${safe(displayCategory(p))}</span>${badge?`<span class="status ${p.status}">${badge}</span>`:''}</div><div class="name ${p.status==='new'?'red':p.status==='limited'?'blue':p.status==='accessory'?'':''}">${safe(visibleName(p))}</div><div class="product-bottom"><div><div class="regular">${p.regular&&p.price!==null&&p.regular>p.price?money(p.regular):'&nbsp;'}</div><div class="price">${discountRate(p)!==null?`<span class="discount-rate">${discountRate(p)}%</span>`:''}${p.price===null?'공구가 미적용':p.price.toLocaleString('ko-KR')+'<span class="won">원</span>'}</div></div><button class="add ${p.price===null?'missing':''}" ${p.price===null?'disabled':''} data-add="${p.id}">${p.price===null?'행사 미적용':'+ 담기'}</button></div></article>`}).join(''):'<div class="no-result">검색 조건에 맞는 상품이 없습니다.</div>';$('resultsFooter').textContent=`총 ${list.length}개 상품 표시`;$('productList').querySelectorAll('[data-add]').forEach(b=>b.addEventListener('click',()=>add(Number(b.dataset.add))));}
+$('productCount').textContent=`${list.length}개 상품`;$('productList').innerHTML=list.length?list.map(p=>{const badge=p.status==='new'?'신제품':p.status==='limited'?'한정판매':p.status==='accessory'?'부속품':'';return `<article class="product"><div class="product-head"><span class="category">${safe(displayCategory(p))}</span>${badge?`<span class="status ${p.status}">${badge}</span>`:''}</div><div class="name ${p.status==='new'?'red':p.status==='limited'?'blue':p.status==='accessory'?'':''}">${safe(visibleName(p))}</div><div class="product-bottom"><div><div class="regular">${p.regular&&p.price!==null&&p.regular>p.price?'평소 판매가 '+money(p.regular):'&nbsp;'}</div><div class="price">${discountRate(p)!==null?`<span class="discount-rate">추가 ${discountRate(p)}%</span>`:''}${p.price===null?'공구가 미적용':p.price.toLocaleString('ko-KR')+'<span class="won">원</span>'}</div></div><button class="add ${p.price===null?'missing':''}" ${p.price===null?'disabled':''} data-add="${p.id}">${p.price===null?'행사 미적용':'+ 담기'}</button></div></article>`}).join(''):'<div class="no-result">검색 조건에 맞는 상품이 없습니다.</div>';$('resultsFooter').textContent=`총 ${list.length}개 상품 표시`;$('productList').querySelectorAll('[data-add]').forEach(b=>b.addEventListener('click',()=>add(Number(b.dataset.add))));}
 
 function store(){try{localStorage.setItem(STATE.activeCart===1?'fireball_festa_cart_2026':'fireball_festa_cart_2026_2',JSON.stringify(activeCart()))}catch(e){}}
 
