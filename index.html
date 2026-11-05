@@ -1067,6 +1067,14 @@ select {
             </div>
             <div class="eligible-gift" id="eligibleGift" aria-live="polite">
             </div>
+            <div class="line">
+              <span>
+                배송비 (5만원 이상 무료)
+              </span>
+              <strong id="shippingFee">
+                0원
+              </strong>
+            </div>
             <div class="total">
               <span>
                 최종 결제 예상 금액
@@ -1082,7 +1090,7 @@ select {
           <div class="mini-tip">
             안내 : 액세서리 지급 불가하며, 사은품은 금액에 맞춰 1개만 표시됩니다.
             <br>
-            배송비는 별도입니다.
+            배송비는 장바구니별 상품 결제 금액 5만원 미만 시 2,800원이며, 5만원 이상은 무료입니다.
             <br>
             홈페이지에 오류가 있을 수 있으며, 실제 행사 내용과는 다를 수 있습니다.
           </div>
@@ -1332,7 +1340,7 @@ function removeItem(id){delete activeCart()[id];store();renderCart()}
 
 function clearCart(){if(STATE.activeCart===1)STATE.cart={};else STATE.cart2={};store();renderCart()}
 
-function renderCart(){const cart=activeCart();const items=PRODUCTS.filter(p=>cart[p.id]);const count=items.reduce((n,p)=>n+cart[p.id],0);const total=items.reduce((n,p)=>n+(p.price||0)*cart[p.id],0);const eligible=items.filter(p=>p.status!=='accessory').reduce((n,p)=>n+(p.price||0)*cart[p.id],0);const regularTotal=items.reduce((n,p)=>n+Math.max(p.regular||0,p.price||0)*cart[p.id],0);const savings=regularTotal-total;const count1=Object.values(STATE.cart).reduce((n,q)=>n+q,0),count2=Object.values(STATE.cart2).reduce((n,q)=>n+q,0);$('cartTab1').textContent='1번 장바구니 ('+count1+')';$('cartTab2').textContent='2번 장바구니 ('+count2+')';$('cartTab1').classList.toggle('active',STATE.activeCart===1);$('cartTab2').classList.toggle('active',STATE.activeCart===2);$('cartTab1').setAttribute('aria-pressed',String(STATE.activeCart===1));$('cartTab2').setAttribute('aria-pressed',String(STATE.activeCart===2));$('cartCurrent').textContent=STATE.activeCart+'번 장바구니에 담는 중';$('mobileCartLabel').textContent=STATE.activeCart+'번 장바구니 예상 합계';$('cartCount').textContent=count;$('topCount').textContent=count;$('mobileCount').textContent=count;$('mobileTotal').textContent=money(total);$('subtotal').textContent=money(regularTotal);$('savings').textContent='− '+money(savings);$('eligible').textContent=money(eligible);$('grandTotal').textContent=money(total);
+function renderCart(){const cart=activeCart();const items=PRODUCTS.filter(p=>cart[p.id]);const count=items.reduce((n,p)=>n+cart[p.id],0);const total=items.reduce((n,p)=>n+(p.price||0)*cart[p.id],0);const eligible=items.filter(p=>p.status!=='accessory').reduce((n,p)=>n+(p.price||0)*cart[p.id],0);const regularTotal=items.reduce((n,p)=>n+Math.max(p.regular||0,p.price||0)*cart[p.id],0);const savings=regularTotal-total;const shipping=total===0||total>=50000?0:2800;const paymentTotal=total+shipping;const count1=Object.values(STATE.cart).reduce((n,q)=>n+q,0),count2=Object.values(STATE.cart2).reduce((n,q)=>n+q,0);$('cartTab1').textContent='1번 장바구니 ('+count1+')';$('cartTab2').textContent='2번 장바구니 ('+count2+')';$('cartTab1').classList.toggle('active',STATE.activeCart===1);$('cartTab2').classList.toggle('active',STATE.activeCart===2);$('cartTab1').setAttribute('aria-pressed',String(STATE.activeCart===1));$('cartTab2').setAttribute('aria-pressed',String(STATE.activeCart===2));$('cartCurrent').textContent=STATE.activeCart+'번 장바구니에 담는 중';$('mobileCartLabel').textContent=STATE.activeCart+'번 장바구니 예상 합계';$('cartCount').textContent=count;$('topCount').textContent=count;$('mobileCount').textContent=count;$('mobileTotal').textContent=money(paymentTotal);$('subtotal').textContent=money(regularTotal);$('savings').textContent='− '+money(savings);$('eligible').textContent=money(eligible);$('shippingFee').textContent=shipping===0?(total===0?'0원':'무료'):money(shipping);$('grandTotal').textContent=money(paymentTotal);
 $('cartBody').innerHTML=items.length?`<div class="cart-list">${items.map(p=>`<div class="cart-item"><div><div class="cart-item-name">${safe(visibleName(p))}</div><div class="cart-item-price">${money(p.price)} × ${cart[p.id]} · ${money(p.price*cart[p.id])}</div>${p.status==='accessory'?'<div class="stock-note">사은품 인정 금액 제외</div>':''}</div><div class="cart-item-right"><div class="qty"><button aria-label="수량 감소" data-minus="${p.id}">−</button><span>${cart[p.id]}</span><button aria-label="수량 증가" data-plus="${p.id}">+</button></div><button class="remove" data-remove="${p.id}">삭제</button></div></div>`).join('')}</div>`:'<div class="cart-empty"><div class="empty-icon">▣</div><strong>장바구니가 비어 있어요</strong>상품의 ‘+ 담기’ 버튼을 눌러보세요.</div>';
 $('cartBody').querySelectorAll('[data-minus]').forEach(b=>b.addEventListener('click',()=>setQty(Number(b.dataset.minus),-1)));$('cartBody').querySelectorAll('[data-plus]').forEach(b=>b.addEventListener('click',()=>setQty(Number(b.dataset.plus),1)));$('cartBody').querySelectorAll('[data-remove]').forEach(b=>b.addEventListener('click',()=>removeItem(Number(b.dataset.remove))));
 const highest=GIFTS.filter(g=>eligible>=g.amount).at(-1);
