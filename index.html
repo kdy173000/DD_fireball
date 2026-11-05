@@ -188,7 +188,7 @@ button:disabled {
 }
 .hero-gifts {
   display:grid;
-  grid-template-columns:1.35fr .85fr 1fr 1fr;
+  grid-template-columns:repeat(4,minmax(0,1fr));
   gap:14px
 }
 .hero-gift-card {
@@ -208,9 +208,6 @@ button:disabled {
   line-height:1.55;
   margin:8px 0 0;
   overflow-wrap:anywhere
-}
-.hero-gift-card:first-child p {
-  white-space:nowrap
 }
 .body-grid {
   display:grid;
@@ -1273,7 +1270,7 @@ const PRODUCTS = [
   {"id":176,"name":"그릿가드 블루","category":"세차용품 부속품","group":"액세서리","status":"accessory","price":null,"regular":null,"stock":"총 200개(색상 합산)","price_pending":true}
 ];
 
-const GIFTS=[{amount:100000,label:'10만원 이상',gift:'바인더 타월패드 클리너 4L'},{amount:200000,label:'20만원 이상',gift:'아이언번 SE 4L'},{amount:300000,label:'30만원 이상',gift:'아이언번 SE 4L + 바인더 타월클리너 4L + 슈터+ 100ml + 바셀+ 100ml'},{amount:500000,label:'50만원 이상',gift:'2구 스페셜 고체왁스 100ml + 아이언번 SE 4L + 바인더 타월클리너 4L + 슈터+ 100ml + 바셀+ 100ml'}];
+const GIFTS=[{amount:100000,label:'10만원 이상',gift:'바인더 타월클리너 4L'},{amount:200000,label:'20만원 이상',gift:'아이언번 SE 4L'},{amount:300000,label:'30만원 이상',gift:'아이언번 SE 4L + 바인더 타월클리너 4L + 슈터+ 100ml + 바셀+ 100ml'},{amount:500000,label:'50만원 이상',gift:'2구 스페셜 고체왁스 100ml + 아이언번 SE 4L + 바인더 타월클리너 4L + 슈터+ 100ml + 바셀+ 100ml'}];
 
 document.getElementById('heroGifts').innerHTML=GIFTS.map(g=>`<div class="hero-gift-card"><strong>${g.amount/10000}만</strong><p>${(g.amount>=300000?g.gift.split(' + '):[g.gift]).map(x=>String(x).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')).join('<br>')}</p></div>`).join('');
 
